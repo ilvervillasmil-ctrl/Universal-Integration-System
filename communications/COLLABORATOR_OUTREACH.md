@@ -8,7 +8,7 @@
 
 ---
 
-Dear [Name],
+Dear team,
 
 I hope this email finds you well. I am writing to request your assistance with an independent verification of a mathematical prediction in complex systems theory.
 
@@ -59,7 +59,7 @@ Ilver Villasmil
 
 ---
 
-Dear [Name],
+Dear team,
 
 I am reaching out regarding a geometric problem that emerged from my research on coherence in complex systems.
 
@@ -112,7 +112,7 @@ Ilver Villasmil
 
 ---
 
-Dear [Name],
+Dear [team],
 
 I am conducting a multi-domain validation of a mathematical framework for measuring coherence in hierarchical systems. I am reaching out because your expertise in [domain] would be invaluable.
 
@@ -166,9 +166,9 @@ Ilver Villasmil
 
 ---
 
-Dear Dr. [Editor Name],
+Dear Dr. Edito
 
-I am writing to inquire whether a manuscript on universal renormalization in complex systems would be suitable for [Journal Name].
+I am writing to inquire whether a manuscript on universal renormalization in complex systems would be suitable for everything Journal
 
 **Title**: Universal Renormalization in Multi-Layer Coherence Systems: Validation of the κ = π/4 Projection Factor
 
@@ -202,9 +202,9 @@ Best regards,
 Ilver Villasmil
 
 **Contact**:
-Email: [email]
-ORCID: [if available]
-Institution: [if applicable]
+Email: ilvervillasmil@mail.com
+ORCID: 
+Institution: independent
 
 ---
 
@@ -275,7 +275,7 @@ Ilver Villasmil
 
 ---
 
-Dear [Name],
+Dear team
 
 Thank you for your interest in the Villasmil-Ω Framework. I'd be happy to discuss the research.
 
