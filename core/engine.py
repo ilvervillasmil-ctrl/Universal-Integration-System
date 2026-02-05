@@ -49,7 +49,6 @@ class OmegaEngine:
         I_ext = √(C₁² + C₂² + 2·C₁·C₂·cos(θ))
         External coherence dependent on phase
         """
-        import math
         cos_theta = math.cos(math.radians(theta))
         i_ext_squared = C1**2 + C2**2 + 2 * C1 * C2 * cos_theta
         return math.sqrt(max(0, i_ext_squared))  # Ensure non-negative
@@ -116,6 +115,6 @@ class OmegaEngine:
         
         # 6. Scale with Golden Ratio (PHI) for universal alignment
         # PHI acts as a harmonic scaling factor to align layers with universal proportions
-        c_omega_scaled = c_omega * (PHI / 2.0)  # Normalize by PHI/2 to keep values reasonable
+        c_omega_scaled = c_omega * (PHI / 2.0)  # Scale by PHI/2 to keep values reasonable
         
         return min(c_omega_scaled, 1.0) # Clamping at 1.0 max
