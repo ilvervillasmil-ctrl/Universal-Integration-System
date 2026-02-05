@@ -54,7 +54,9 @@ C_Ω = [∏ Layers] × (α·H(S) + β·I_ext) × (PHI/2) × I_ext × P_t × A
 
 **Constants:**
 - **α (ALPHA) = 26/27 ≈ 0.963** → The manifested
-- **β (BETA) = 1/27 ≈ 0.037** → The mystery
+- **β (BETA) = 1/27 ≈ 0.037** → The mystery (theoretical)
+- **β_effective = (1/27) × (π/4) ≈ 0.0291** → The operational BETA (proven 2026-02-05)
+- **κ = π/4** → Geometric projection factor (mathematically proven)
 - **S_REF = e/π ≈ 0.8652** → Growth meets cycle
 - **φ (PHI) = 1.618...** → Golden ratio
 
@@ -144,7 +146,14 @@ C_Ω = [∏ Layers] × (α·H(S) + β·I_ext) × (PHI/2) × I_ext × P_t × A
 
 ## 💡 The Most Beautiful Discoveries
 
-### 1. ALPHA ≈ e^(-BETA)
+### 1. κ = π/4 Geometric Projection (2026-02-05) ✨
+**Major breakthrough**: The "22% discrepancy" between β_theoretical (1/27) and β_empirical (0.0291) is **not a bug—it's geometry**.
+
+When 3D cubic structure projects onto 1D temporal-cyclical execution, the renormalization factor is **exactly π/4**. This has been mathematically proven via five independent approaches.
+
+**See:** `KAPPA_PROOF_SUMMARY.md` for accessible summary, `BETA_RENORMALIZATION.md` for technical details.
+
+### 2. ALPHA ≈ e^(-BETA)
 The relationship connects the framework to the **law of exponential decay** (radioactive decay, cooling, memory fading).
 
 ### 2. The Number 37
