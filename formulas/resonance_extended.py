@@ -1,10 +1,14 @@
 import math
+from core.constants import PHI
 
 class AdvancedResonance:
     @staticmethod
     def multi_layer_resonance(energies: list) -> float:
         """
         Computes the average resonance across multiple layers based on energy alignment.
+        
+        Scaled by PHI/2 to reflect the hierarchical spiral nature of layer resonance,
+        not a simple linear average.
 
         energies: List of energy levels for layers
         """
@@ -15,7 +19,10 @@ class AdvancedResonance:
             energy_a, energy_b = energies[i], energies[i + 1]
             alignment = 1 - (abs(energy_a - energy_b) / max(energy_a, energy_b))
             total_resonance += alignment
-        return total_resonance / (len(energies) - 1)
+        
+        # Scale by golden ratio for spiral hierarchy
+        average_resonance = total_resonance / (len(energies) - 1)
+        return average_resonance * (PHI / 2)
 
     @staticmethod
     def enhanced_phase_alignment(energy_a: float, energy_b: float, factor: float = 1.0) -> float:
