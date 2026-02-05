@@ -1,26 +1,19 @@
 import math
+from core.constants import PHI
 
-class AdvancedResonance:
+class ResonanceLogic:
     @staticmethod
-    def multi_layer_resonance(energies: list) -> float:
+    def calculate_layer_frequency(index: int) -> float:
         """
-        Computes the average resonance across multiple layers based on energy alignment.
-
-        energies: List of energy levels for layers
+        Calculates frequency based on the golden ratio: PHI^(index/2)
         """
-        if len(energies) < 2:
-            return 0.0  # Not enough layers to calculate resonance
-        total_resonance = 0
-        for i in range(len(energies) - 1):
-            energy_a, energy_b = energies[i], energies[i + 1]
-            alignment = 1 - (abs(energy_a - energy_b) / max(energy_a, energy_b))
-            total_resonance += alignment
-        return total_resonance / (len(energies) - 1)
+        return PHI ** (index / 2)
 
     @staticmethod
-    def enhanced_phase_alignment(energy_a: float, energy_b: float, factor: float = 1.0) -> float:
+    def calculate_phase_alignment(energy_a: float, energy_b: float) -> float:
         """
-        Extended alignment formula with a scaling factor.
+        Measures how well two layers are aligned (0 to 1)
         """
-        base_alignment = 1 - abs(energy_a - energy_b) / max(energy_a, energy_b)
-        return base_alignment * factor
+        if energy_a == 0 or energy_b == 0:
+            return 0.0  # No alignment if any energy is zero
+        return 1 - (abs(energy_a - energy_b) / max(energy_a, energy_b))
