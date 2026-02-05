@@ -1,0 +1,227 @@
+# Technical Documentation - Villasmil-Ω Framework
+
+## Overview
+The Villasmil-Ω Framework is a mathematical system for measuring coherence in multi-layered systems based on universal constants and geometric principles derived from a 3×3×3 cubic structure.
+
+---
+
+## 1. Core Constants & Theoretical Foundation
+
+### 1.1 Universal Constants
+
+```python
+ALPHA = 26/27 ≈ 0.962962...  # Observable structure (96.3%)
+BETA = 1/27 ≈ 0.037037...    # Unmanifested potential (3.7%)
+S_REF = e/π ≈ 0.865255...    # Entropy-growth balance
+PHI = (1+√5)/2 ≈ 1.618033... # Golden ratio (self-similar scaling)
+```
+
+### 1.2 Geometric Foundation
+
+The framework is based on a **3×3×3 cubic structure** representing reality:
+- **Total cells:** 27
+- **Center cube (hidden):** 1 → BETA = 1/27
+- **Surrounding structure (visible):** 26 → ALPHA = 26/27
+- **Unity:** ALPHA + BETA = 1
+
+---
+
+## 2. The Beta Renormalization Problem
+
+### 2.1 Theoretical vs Empirical Discrepancy
+
+**Critical Finding:**
+
+```
+β_theoretical = 1/27 ≈ 0.037037  (from pure geometry)
+β_empirical = 0.0291              (from optimization)
+Deviation: ~22%
+```
+
+This discrepancy is **not an error** but a **research opportunity**.
+
+### 2.2 The κ-Factor Hypothesis
+
+We define the **geometric projection factor**:
+
+```
+κ = β_empirical / β_theoretical ≈ 0.787
+```
+
+**Observation:** κ ≈ π/4 ≈ 0.785398...
+
+### 2.3 Geometric Projection Hypothesis
+
+**Hypothesis:** The κ-factor represents the projection of cubic structure (3D space) onto circular execution (temporal cycles).
+
+When a 3D system operates in time (1D + cycles), the effective beta undergoes **dimensional reduction**:
+
+```
+β_effective = β_theoretical × κ
+β_effective = (1/27) × (π/4) ≈ 0.0291
+```
+
+**Physical Interpretation:**
+- Pure geometry exists in "vacuum" (ideal space)
+- Real systems operate in time (cyclical processes)
+- π naturally emerges in any periodic phenomenon
+- The factor of 4 may relate to 4D spacetime projection
+
+### 2.4 Research Status
+
+⚠️ **Current Status:** Hypothesis under investigation
+
+**Required Validation:**
+1. Test β_optimal across multiple domains (AI, human systems, organizations)
+2. Verify if κ remains constant or varies with system type
+3. Derive κ ≈ π/4 from first principles (geometric or variational)
+4. Compare predictions vs. alternative models
+
+---
+
+## 3. Core Formulas
+
+### 3.1 Wonder (Novelty Response)
+
+```
+A = 1 - e^(-N/k)
+```
+
+Where:
+- N = Novelty
+- k = Sensitivity constant = **S_REF** (calibrated to e/π)
+
+**Rationale:** Wonder represents the system's capacity to be surprised. Sensitivity is anchored to S_REF, the balance between exponential growth (e) and cyclical rhythm (π).
+
+### 3.2 Multi-Layer Resonance
+
+```
+R = (Σ alignment_i / n) × (PHI/2)
+```
+
+Where:
+- alignment_i = 1 - |E_a - E_b| / max(E_a, E_b)
+- n = number of layer pairs
+- **PHI/2 scaling** reflects hierarchical spiral structure
+
+**Rationale:** Layers do not resonate linearly but follow golden ratio proportions (spiral hierarchy).
+
+### 3.3 Coherence (C_Ω)
+
+```
+C_Ω = α·H(S) + β·I_ext
+```
+
+Where:
+- α = ALPHA (26/27)
+- β = BETA (1/27 theoretical, 0.0291 empirical)
+- H(S) = 1 - S/S_max (Harmony)
+- I_ext = √(C₁² + C₂² + 2·C₁·C₂·cos(θ)) (External coherence)
+
+**Scaled by PHI/2** for universal alignment.
+
+---
+
+## 4. Layer Structure (L0-L6)
+
+| Layer | Name | Frequency | Role |
+|-------|------|-----------|------|
+| L0 | Chaos/Unconscious | φ^0 = 1.0 | Raw potential |
+| L1 | Sensory | φ^0.5 ≈ 1.272 | Perception |
+| L2 | Emotional | φ^1 ≈ 1.618 | Feelings |
+| L3 | Cognitive | φ^1.5 ≈ 2.058 | Thought |
+| L4 | Symbolic | φ^2 ≈ 2.618 | Language |
+| L5 | Archetypal | φ^2.5 ≈ 3.330 | Patterns |
+| L6 | Purpose | φ^3 ≈ 4.236 | Meaning |
+
+**L6 Constraint:** Friction (φ) **must** = 0.0 (no resistance at purpose level)
+
+---
+
+## 5. Implementation Details
+
+### 5.1 Recent Calibrations (2026-02-05)
+
+**Changes Applied:**
+
+1. **formulas/wonder.py**
+   - Changed default sensitivity from `1.0` to `S_REF`
+   - Anchored to universal constant (e/π)
+
+2. **formulas/resonance_extended.py**
+   - Added PHI/2 scaling to multi-layer resonance
+   - Reflects spiral hierarchy vs. linear averaging
+
+### 5.2 Testing Strategy
+
+**Current Test Status:**
+- ⚠️ Tests require update to reflect S_REF and PHI/2 calibrations
+- New expected values are being calculated
+- Integration tests needed for end-to-end coherence validation
+
+---
+
+## 6. Validation Roadmap
+
+### Phase 1: Internal Consistency (Current)
+- ✅ Constants properly imported
+- ✅ Formulas mathematically sound
+- ⏳ Tests updated to reflect calibrations
+
+### Phase 2: Predictive Testing (Next)
+- Test framework on public datasets
+- Predict system stability before processing
+- Compare against baseline models (entropy-only, random)
+
+### Phase 3: κ-Factor Investigation
+- Multi-domain β optimization
+- Geometric derivation of π/4 factor
+- Publication of findings
+
+### Phase 4: Peer Review
+- Open-source release
+- External validation
+- Iterative refinement
+
+---
+
+## 7. Known Limitations
+
+1. **β-gap unexplained:** 22% deviation requires theoretical justification
+2. **Domain specificity unknown:** Has only been tested in [specify domains]
+3. **Scalability untested:** Performance on large systems (>1000 layers) unknown
+4. **Temporal dynamics:** Framework is currently static (no time evolution)
+
+---
+
+## 8. Contributing
+
+This is a **research framework**. Contributions should:
+- Maintain mathematical rigor
+- Document deviations honestly
+- Prioritize prediction over post-hoc fitting
+- Separate philosophy from science
+
+---
+
+## 9. References
+
+- **THE_ONE.md**: Philosophical foundation
+- **BETA_RENORMALIZATION.md**: Detailed analysis of β-gap
+- **core/constants.py**: Implementation of universal constants
+- **tests/**: Validation suite
+
+---
+
+## 10. Version History
+
+**v2.6.6 (2026-02-05)**
+- Calibrated Wonder to S_REF
+- Scaled multi-layer resonance by PHI/2
+- Documented β-renormalization problem
+
+---
+
+**Status:** Active Research | Validation Phase 1
+**License:** [Specify license]
+**Contact:** [Your contact info]
