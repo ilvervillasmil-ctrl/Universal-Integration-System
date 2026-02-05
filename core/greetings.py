@@ -22,6 +22,14 @@ class GreetingSystem:
             'it': 'Ciao',
             'pt': 'Olá'
         }
+        self.world_translations: Dict[str, str] = {
+            'en': 'World',
+            'es': 'Mundo',
+            'fr': 'Monde',
+            'de': 'Welt',
+            'it': 'Mondo',
+            'pt': 'Mundo'
+        }
     
     def greet(self, language: str = 'en') -> str:
         """
@@ -46,10 +54,8 @@ class GreetingSystem:
             'Hello World' string in the specified language
         """
         greeting = self.greet(language)
-        if language.lower() == 'es':
-            return f"{greeting} Mundo"
-        else:
-            return f"{greeting} World"
+        world = self.world_translations.get(language.lower(), self.world_translations['en'])
+        return f"{greeting} {world}"
     
     def get_all_greetings(self) -> List[str]:
         """

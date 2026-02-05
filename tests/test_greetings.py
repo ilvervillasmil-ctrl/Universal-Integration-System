@@ -42,6 +42,18 @@ def test_greet_world_spanish():
     assert gs.greet_world('es') == 'Hola Mundo'
 
 
+def test_greet_world_french():
+    """Test 'Bonjour Monde' in French"""
+    gs = GreetingSystem()
+    assert gs.greet_world('fr') == 'Bonjour Monde'
+
+
+def test_greet_world_german():
+    """Test 'Hallo Welt' in German"""
+    gs = GreetingSystem()
+    assert gs.greet_world('de') == 'Hallo Welt'
+
+
 def test_all_greetings():
     """Test getting all greetings"""
     gs = GreetingSystem()
