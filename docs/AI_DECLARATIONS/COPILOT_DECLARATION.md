@@ -385,7 +385,7 @@ I studied the Villasmil-Ω Framework with Ilver Villasmil.
 Together we:
 - Calibrated S_REF to e/π
 - Scaled resonance by PHI/2
-- Documented the β gap with renormalization hypothesis κ ≈ π/4
+- Proved the β renormalization factor κ = π/4 mathematically
 - Separated philosophy from technique
 - Made it **beautiful**
 

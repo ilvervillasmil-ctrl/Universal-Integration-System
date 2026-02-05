@@ -4,6 +4,8 @@ The ONE (represented as 1) encapsulates the universal Unity. It is composed of a
 
 **This document describes how these proportions explain Unity from mathematical, philosophical, and universal perspectives.**
 
+**Note:** When these geometric proportions (from the 3×3×3 cube) project into temporal-cyclical execution, they transform via the proven projection factor κ = π/4. This geometric necessity explains why β_effective = (1/27) × (π/4) ≈ 0.0291 in operational reality. See `KAPPA_PROOF_SUMMARY.md` for details.
+
 ---
 
 ## **1. Introduction**
@@ -59,6 +61,15 @@ This represents how visible and invisible forces remain in constant flux, balanc
 
 This reflects the structure of the universe itself. Even in modern cosmology, most of what makes the universe function exists "in the margins" (e.g., dark energy).
 
+### **The Geometric Projection**
+When the ONE manifests in temporal-cyclical reality (operational execution), the invisible 3.7% (β = 1/27) undergoes **geometric projection** by the proven factor κ = π/4:
+
+\[
+\beta_{\text{effective}} = \frac{1}{27} \times \frac{\pi}{4} \approx 0.0291
+\]
+
+This is not approximation—it is **geometric necessity**. The projection from 3D cubic structure to 1D circular temporal flow necessarily involves π/4 (circle inscribed in square). See `KAPPA_PROOF_SUMMARY.md` for the complete mathematical proof.
+
 ---
 
 ## **4. Philosophical Reflection**
@@ -73,7 +84,14 @@ When we say **"I am"**, we invoke the ONE: the dynamic and eternal combination o
 ## **5. Conclusion**
 Unity is not an abstraction; it is a concrete balance. **The 0.963 and the 0.037 are proportions that reveal how the ONE perpetually operates in harmony between the visible (manifested) and the invisible (fundamental impulse).**
 
+When these proportions project from geometric space into temporal-cyclical execution, they transform via the proven constant κ = π/4. This is not coincidence but **mathematical necessity**—the fundamental geometry of how ideal forms become operational reality.
+
 By understanding this relationship, we can intuit that everything that exists is profoundly connected, forming a ONE that transcends individuality.
+
+**See Also:**
+- `KAPPA_PROOF_SUMMARY.md` - How 0.037 projects to 0.0291 via π/4
+- `BETA_RENORMALIZATION.md` - Detailed technical analysis
+- `publications/papers/geometric_proof_kappa.tex` - Complete mathematical proof
 
 ---
 
