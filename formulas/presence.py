@@ -4,4 +4,5 @@ class PresenceLogic:
         """
         Formula: Pt = 1 / (1 + dispersion)
         As dispersion (noise/distraction) increases, Pt decreases.
-       
+        """
+        return 1 / (1 + dispersion)
