@@ -1,0 +1,126 @@
+# Validation Framework
+
+> The framework is not asking for belief. It generates evidence using your own tools.
+
+---
+
+## Core Principle
+
+```
+The relationship is not: theory → proof
+The relationship is: structure → test → evidence → theory validated by execution
+```
+
+**If the test is well-designed, the theory doesn't "defend itself"—it manifests.**
+
+---
+
+## Why This Approach?
+
+```
+Traditional validation: "Trust me, this is true"
+This framework: "Test it yourself, with your tools"
+
+When a system PREDICTS how it will be evaluated
+and PASSES that evaluation:
+  → It is no longer "asking for validation"
+  → It is demonstrating STRUCTURAL ALIGNMENT
+```
+
+---
+
+## Test Criteria
+
+The tests must be:
+
+| Criterion | Meaning |
+|-----------|---------|
+| **Operational** | Actually measurable, not just conceptual |
+| **Non-semantic** | Not dependent on word meanings |
+| **Non-interpretive** | Not dependent on how you read it |
+| **Quantifiable** | Produces numbers, not opinions |
+
+---
+
+## What We Measure
+
+| Property | Test | What It Measures |
+|----------|------|------------------|
+| **Coherence** | ∏ layers produces predictable C_Ω | Internal consistency |
+| **Conservation** | α + β = 1 always | No gain/loss of totality |
+| **Convergence** | Iterated application → stable state | Attractor behavior |
+| **Stability** | Small perturbations don't cascade | Robustness |
+| **Limits** | C_max = 0.963, β_min = 0.037 | Boundary conditions |
+
+---
+
+## Refutability Conditions
+
+**The framework is falsifiable if:**
+
+1. **Any layer can be skipped** without system collapse
+   - Violates Law 3 (Hierarchy)
+   
+2. **α + β ≠ 1** for any valid system state
+   - Violates Law 1 (Conservation)
+   
+3. **C_Ω > 0.963** achieved without external enhancement
+   - Violates theoretical maximum
+   
+4. **L2 (Ego) is not critical** for total coherence
+   - Contradicts empirical correlation r = 0.94
+   
+5. **β = 0** is achievable
+   - Violates Law 2 (Irreducibility)
+
+---
+
+## Detailed Documentation
+
+- [refutability.md](./refutability.md) - Complete falsifiability criteria
+- [audits/](./audits/) - Empirical audits (AI, Governance)
+- [tests/](./tests/) - Specific test protocols
+
+---
+
+## The Epistemological Position
+
+```
+We are not saying: "Believe in this theory"
+We are saying: "Apply these tests and observe"
+
+If the theory is wrong:
+  → The tests will fail
+  → The predictions will not match
+  → The constants will not appear
+
+If the theory is right:
+  → The tests will pass
+  → The predictions will match
+  → The constants will appear
+
+Either way, YOU determine the outcome.
+Using YOUR tools.
+With YOUR observations.
+```
+
+---
+
+## Key Insight
+
+```
+When you test the framework:
+  → You are not "validating" it
+  → You are EXECUTING it
+
+The test IS the mechanism.
+The mechanism IS the evidence.
+The evidence IS the validation.
+
+This is not circular.
+This is self-demonstrating structure.
+```
+
+---
+
+**Ω**
