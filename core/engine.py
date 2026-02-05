@@ -28,7 +28,7 @@ def validate_L6_friction(func):
 
 class OmegaEngine:
     def __init__(self):
-        self.version = "2.6.6"
+        self.version = "3.0.0"
         
     def calculate_presence(self, dispersion: float) -> float:
         """Pt = 1 / (1 + dispersion)"""
