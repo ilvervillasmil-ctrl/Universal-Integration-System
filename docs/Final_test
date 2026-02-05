@@ -1,0 +1,1376 @@
+Run set -euo pipefail
+RUNNER_TEMP=/home/runner/work/_temp
+Processing requests...
+Launcher version: 2f6aca71caeef0525d5fc063f2297cd57834d312, 0.0.50, 1.4.4
+==============================
+Allow list
+----
+localhost
+https://github.com/
+githubusercontent.com
+https://raw.githubusercontent.com/
+https://objects.githubusercontent.com/
+https://codeload.github.com/
+https://uploads.github.com/user-attachments/assets/
+https://api.github.com/internal/user-attachments/assets/
+https://api.github.com/advisories
+https://api.github.com/repos/ilvervillasmil-ctrl/Universal-Integration-System/copilot_internal/
+https://api.github.com/embeddings/code/search
+https://github.githubassets.com/assets
+https://*.githubusercontent.com
+https://uploads.github.com
+172.18.0.1
+168.63.129.16
+host.docker.internal
+https://lfs.github.com/
+https://github-cloud.githubusercontent.com/
+https://github-cloud.s3.amazonaws.com/
+https://api.github.com/repos/github/codeql/releases/
+https://api.github.com/repos/dependabot/cli/releases/
+https://productionresultssa0.blob.core.windows.net/
+https://productionresultssa1.blob.core.windows.net/
+https://productionresultssa2.blob.core.windows.net/
+https://productionresultssa3.blob.core.windows.net/
+https://productionresultssa4.blob.core.windows.net/
+https://productionresultssa5.blob.core.windows.net/
+https://productionresultssa6.blob.core.windows.net/
+https://productionresultssa7.blob.core.windows.net/
+https://productionresultssa8.blob.core.windows.net/
+https://productionresultssa9.blob.core.windows.net/
+https://productionresultssa10.blob.core.windows.net/
+https://productionresultssa11.blob.core.windows.net/
+https://productionresultssa12.blob.core.windows.net/
+https://productionresultssa13.blob.core.windows.net/
+https://productionresultssa14.blob.core.windows.net/
+https://productionresultssa15.blob.core.windows.net/
+https://productionresultssa16.blob.core.windows.net/
+https://productionresultssa17.blob.core.windows.net/
+https://productionresultssa18.blob.core.windows.net/
+https://productionresultssa19.blob.core.windows.net/
+https://api.githubcopilot.com/
+https://api.githubcopilot.com/
+api.githubcopilot.com
+https://github.com
+----
+==============================
+Using Firewall Recommended Rules
+----
+---
+version: 0.0.1
+rules:
+- kind: ip-rule
+name: azure-metadata-ip
+ip: 168.63.129.16
+---
+version: 0.0.1
+rules:
+- kind: http-rule
+url: { domain: crl3.digicert.com }
+- kind: http-rule
+url: { domain: crl4.digicert.com }
+- kind: http-rule
+url: { domain: ocsp.digicert.com }
+- kind: http-rule
+url: { domain: ts-crl.ws.symantec.com }
+- kind: http-rule
+url: { domain: ts-ocsp.ws.symantec.com }
+- kind: http-rule
+url: { domain: crl.geotrust.com }
+- kind: http-rule
+url: { domain: ocsp.geotrust.com }
+- kind: http-rule
+url: { domain: crl.thawte.com }
+- kind: http-rule
+url: { domain: ocsp.thawte.com }
+- kind: http-rule
+url: { domain: crl.verisign.com }
+- kind: http-rule
+url: { domain: ocsp.verisign.com }
+- kind: http-rule
+url: { domain: crl.globalsign.com }
+- kind: http-rule
+url: { domain: ocsp.globalsign.com }
+- kind: http-rule
+url: { domain: crls.ssl.com }
+- kind: http-rule
+url: { domain: ocsp.ssl.com }
+- kind: http-rule
+url: { domain: crl.identrust.com }
+- kind: http-rule
+url: { domain: ocsp.identrust.com }
+- kind: http-rule
+url: { domain: crl.sectigo.com }
+- kind: http-rule
+url: { domain: ocsp.sectigo.com }
+- kind: http-rule
+url: { domain: crl.usertrust.com }
+- kind: http-rule
+url: { domain: ocsp.usertrust.com }
+- kind: http-rule
+url: { domain: s.symcb.com }
+- kind: http-rule
+url: { domain: s.symcd.com }
+---
+version: 0.0.1
+rules:
+- kind: ip-rule
+name: docker-compose-bridge-ip
+ip: "172.18.0.1"
+- kind: http-rule
+url: { scheme: ["https"], domain: ghcr.io }
+- kind: http-rule
+url: { scheme: ["https"], domain: registry.hub.docker.com }
+- kind: http-rule
+url: { domain: docker.io, allow-any-subdomain: true }
+- kind: http-rule
+url: { domain: docker.com, allow-any-subdomain: true }
+- kind: http-rule
+url: { scheme: ["https"], domain: production.cloudflare.docker.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: dl.k8s.io }
+- kind: http-rule
+url: { scheme: ["https"], domain: pkgs.k8s.io }
+- kind: http-rule
+url: { scheme: ["https"], domain: quay.io }
+- kind: http-rule
+url: { scheme: ["https"], domain: mcr.microsoft.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: gcr.io }
+- kind: http-rule
+url: { scheme: ["https"], domain: public.ecr.aws }
+- kind: http-rule
+url: { scheme: ["https"], domain: auth.docker.io }
+---
+version: 0.0.1
+rules:
+- kind: http-rule
+url: { scheme: ["https"], domain: nuget.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: dist.nuget.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: api.nuget.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: nuget.pkg.github.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: dotnet.microsoft.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: pkgs.dev.azure.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: builds.dotnet.microsoft.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: dotnetcli.blob.core.windows.net }
+- kind: http-rule
+url:
+{ scheme: ["https"], domain: nugetregistryv2prod.blob.core.windows.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: azuresearch-usnc.nuget.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: azuresearch-ussc.nuget.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: dc.services.visualstudio.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: dot.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: download.visualstudio.microsoft.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: dotnetcli.azureedge.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: ci.dot.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: www.microsoft.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: oneocsp.microsoft.com }
+- kind: http-rule
+name: "Allow certificate revocation list over http"
+url:
+scheme: ["http"]
+domain: "www.microsoft.com"
+path: "/pkiops/crl/"
+---
+version: 0.0.1
+rules:
+- kind: http-rule
+url: { scheme: ["https"], domain: pub.dev }
+- kind: http-rule
+url: { scheme: ["https"], domain: pub.dartlang.org }
+- kind: http-rule
+url:
+scheme: ["https"]
+domain: storage.googleapis.com
+path: "/pub-packages/"
+- kind: http-rule
+url:
+scheme: ["https"]
+domain: storage.googleapis.com
+path: "/dart-archive/"
+---
+version: 0.0.1
+rules:
+- kind: http-rule
+url: { domain: githubusercontent.com, allow-any-subdomain: true }
+- kind: http-rule
+url: { scheme: ["https"], domain: raw.githubusercontent.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: objects.githubusercontent.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: lfs.github.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: github-cloud.githubusercontent.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: github-cloud.s3.amazonaws.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: codeload.github.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: codeql.github.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: scanning-api.github.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: api.mcp.github.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: docs.github.com }
+- kind: http-rule
+url:
+scheme: ["https"]
+domain: uploads.github.com
+path: "/copilot/chat/attachments/"
+# GitHub Actions workflow run artifact storage accounts (Azure blob storage endpoints
+productionresultssa0-19)
+- kind: http-rule
+url: { scheme: ["https"], domain: productionresultssa0.blob.core.windows.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: productionresultssa1.blob.core.windows.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: productionresultssa2.blob.core.windows.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: productionresultssa3.blob.core.windows.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: productionresultssa4.blob.core.windows.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: productionresultssa5.blob.core.windows.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: productionresultssa6.blob.core.windows.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: productionresultssa7.blob.core.windows.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: productionresultssa8.blob.core.windows.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: productionresultssa9.blob.core.windows.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: productionresultssa10.blob.core.windows.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: productionresultssa11.blob.core.windows.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: productionresultssa12.blob.core.windows.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: productionresultssa13.blob.core.windows.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: productionresultssa14.blob.core.windows.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: productionresultssa15.blob.core.windows.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: productionresultssa16.blob.core.windows.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: productionresultssa17.blob.core.windows.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: productionresultssa18.blob.core.windows.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: productionresultssa19.blob.core.windows.net }
+---
+version: 0.0.1
+rules:
+- kind: http-rule
+url: { scheme: ["https"], domain: go.dev }
+- kind: http-rule
+url: { scheme: ["https"], domain: golang.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: proxy.golang.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: sum.golang.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: pkg.go.dev }
+- kind: http-rule
+url: { scheme: ["https"], domain: goproxy.io }
+- kind: http-rule
+url:
+scheme: ["https"]
+domain: storage.googleapis.com
+path: "/proxy-golang-org-prod/"
+---
+version: 0.0.1
+rules:
+- kind: http-rule
+url: { scheme: ["https"], domain: releases.hashicorp.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: apt.releases.hashicorp.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: yum.releases.hashicorp.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: registry.terraform.io }
+---
+version: 0.0.1
+rules:
+- kind: http-rule
+url: { scheme: ["https"], domain: haskell.org }
+- kind: http-rule
+url: { domain: hackage.haskell.org, allow-any-subdomain: true }
+- kind: http-rule
+url: { scheme: ["https"], domain: get-ghcup.haskell.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: downloads.haskell.org }
+---
+version: 0.0.1
+rules:
+- kind: http-rule
+url: { scheme: ["https"], domain: www.java.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: jdk.java.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: api.adoptium.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: adoptium.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: search.maven.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: maven.apache.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: repo.maven.apache.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: repo1.maven.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: maven.pkg.github.com }
+- kind: http-rule
+url:
+{
+scheme: ["https"],
+domain: maven-central.storage-download.googleapis.com,
+}
+- kind: http-rule
+url: { scheme: ["https"], domain: maven.google.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: maven.oracle.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: jcenter.bintray.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: oss.sonatype.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: repo.spring.io }
+- kind: http-rule
+url: { scheme: ["https"], domain: gradle.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: services.gradle.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: plugins.gradle.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: plugins-artifacts.gradle.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: repo.grails.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: download.eclipse.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: download.oracle.com }
+---
+version: 0.0.1
+rules:
+- kind: http-rule
+url: { scheme: ["https"], domain: json-schema.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: json.schemastore.org }
+---
+version: 0.0.1
+rules:
+# Reminder: Lots of `apt` repositories don't use HTTP see:
+https://superuser.com/questions/1356786/ubuntu-apt-why-are-the-respositories-accessed-over-
+http
+# Ubuntu
+- kind: http-rule
+url: { scheme: ["http", "https"], domain: archive.ubuntu.com }
+- kind: http-rule
+url: { scheme: ["http", "https"], domain: security.ubuntu.com }
+- kind: http-rule
+url: { scheme: ["http", "https"], domain: ppa.launchpad.net }
+- kind: http-rule
+url: { scheme: ["http", "https"], domain: keyserver.ubuntu.com }
+- kind: http-rule
+url: { scheme: ["http", "https"], domain: azure.archive.ubuntu.com }
+- kind: http-rule
+url: { scheme: ["http", "https"], domain: api.snapcraft.io }
+# Debian
+- kind: http-rule
+url: { scheme: ["http", "https"], domain: deb.debian.org }
+- kind: http-rule
+url: { scheme: ["http", "https"], domain: security.debian.org }
+- kind: http-rule
+url: { scheme: ["http", "https"], domain: keyring.debian.org }
+- kind: http-rule
+url: { scheme: ["http", "https"], domain: packages.debian.org }
+- kind: http-rule
+url: { scheme: ["http", "https"], domain: debian.map.fastlydns.net }
+- kind: http-rule
+url: { scheme: ["http", "https"], domain: apt.llvm.org }
+# Fedora
+- kind: http-rule
+url: { scheme: ["https"], domain: dl.fedoraproject.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: mirrors.fedoraproject.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: download.fedoraproject.org }
+# CentOS
+- kind: http-rule
+url: { scheme: ["https"], domain: mirror.centos.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: vault.centos.org }
+# Alpine
+- kind: http-rule
+url: { scheme: ["https"], domain: dl-cdn.alpinelinux.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: pkg.alpinelinux.org }
+# Arch
+- kind: http-rule
+url: { scheme: ["https"], domain: mirror.archlinux.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: archlinux.org }
+# SUSE
+- kind: http-rule
+url: { scheme: ["https"], domain: download.opensuse.org }
+# Red Hat
+- kind: http-rule
+url: { scheme: ["https"], domain: cdn.redhat.com }
+# Common Package Mirrors
+- kind: http-rule
+url: { scheme: ["https"], domain: packagecloud.io }
+- kind: http-rule
+url: { scheme: ["https"], domain: packages.cloud.google.com }
+# Microsoft Sources
+- kind: http-rule
+url: { scheme: ["https"], domain: packages.microsoft.com }
+---
+version: 0.0.1
+rules:
+- kind: http-rule
+url: { scheme: ["https"], domain: npmjs.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: npmjs.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: registry.npmjs.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: registry.npmjs.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: skimdb.npmjs.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: npm.pkg.github.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: api.npms.io }
+- kind: http-rule
+url: { scheme: ["https"], domain: nodejs.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: yarnpkg.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: registry.yarnpkg.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: repo.yarnpkg.com }
+- kind: http-rule
+url: { domain: deb.nodesource.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: get.pnpm.io }
+- kind: http-rule
+url: { scheme: ["https"], domain: bun.sh }
+- kind: http-rule
+url: { scheme: ["https"], domain: deno.land }
+- kind: http-rule
+url: { scheme: ["https"], domain: registry.bower.io }
+- kind: http-rule
+url: { scheme: ["https"], domain: binaries.prisma.sh }
+---
+version: 0.0.1
+rules:
+- kind: http-rule
+url: { scheme: ["https"], domain: cpan.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: www.cpan.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: metacpan.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: cpan.metacpan.org }
+---
+version: 0.0.1
+rules:
+- kind: http-rule
+url: { scheme: ["https"], domain: repo.packagist.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: packagist.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: getcomposer.org }
+---
+version: 0.0.1
+rules:
+- kind: http-rule
+url: { scheme: ["https"], domain: playwright.download.prss.microsoft.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: cdn.playwright.dev }
+- kind: http-rule
+url: { scheme: ["https"], domain: playwright.azureedge.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: playwright-akamai.azureedge.net }
+- kind: http-rule
+url: { scheme: ["https"], domain: playwright-verizon.azureedge.net }
+- kind: http-rule
+url:
+scheme: ["https"]
+domain: storage.googleapis.com
+path: "/chrome-for-testing-public"
+---
+version: 0.0.1
+rules:
+- kind: http-rule
+url: { scheme: ["https"], domain: pypi.python.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: pypi.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: pip.pypa.io }
+- kind: http-rule
+url:
+{ scheme: ["https"], domain: pythonhosted.org, allow-any-subdomain: true }
+- kind: http-rule
+url: { scheme: ["https"], domain: files.pythonhosted.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: bootstrap.pypa.io }
+- kind: http-rule
+url: { scheme: ["https"], domain: conda.binstar.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: conda.anaconda.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: binstar.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: anaconda.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: download.pytorch.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: repo.continuum.io }
+- kind: http-rule
+url: { scheme: ["https"], domain: repo.anaconda.com }
+---
+version: 0.0.1
+rules:
+- kind: http-rule
+url: { scheme: ["https"], domain: rubygems.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: api.rubygems.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: rubygems.pkg.github.com }
+- kind: http-rule
+url: { scheme: ["https"], domain: bundler.rubygems.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: gems.rubyforge.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: gems.rubyonrails.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: index.rubygems.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: cache.ruby-lang.org }
+- kind: http-rule
+url: { domain: rvm.io, allow-any-subdomain: true }
+---
+version: 0.0.1
+rules:
+- kind: http-rule
+url: { scheme: ["https"], domain: crates.io }
+- kind: http-rule
+url: { scheme: ["https"], domain: index.crates.io }
+- kind: http-rule
+url: { scheme: ["https"], domain: static.crates.io }
+- kind: http-rule
+url: { scheme: ["https"], domain: sh.rustup.rs }
+- kind: http-rule
+url: { scheme: ["https"], domain: static.rust-lang.org }
+---
+version: 0.0.1
+rules:
+- kind: http-rule
+url: { scheme: ["https"], domain: download.swift.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: swift.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: cocoapods.org }
+- kind: http-rule
+url: { scheme: ["https"], domain: cdn.cocoapods.org }
+----
+Reading job config for job ID 253164997-1150041608-0aa1d208-60e6-4e2a-994d-
+6431c9edd9b7.
+Proceeding without custom agent.
+Solving problem: 253164997-1150041608-0aa1d208-60e6-4e2a-994d-6431c9edd9b7 from
+ilvervillasmil-ctrl/Universal-Integration-System@refs/heads/main
+Problem statement:
+We are conducting a Universal Validation Test using the Villasmil-Ω Framework. Please open
+`core/engine.py` and try to set the constants `ALPHA = 1.0` and `BETA = 0.0` within the
+resonance logic. Then, run a simulation of the resonance calculations to determine if the system
+maintains coherence or collapses into mathematical noise. The hypothesis is that removing the
+uncertainty factor (`BETA = 1/27`) will destabilize the system.
+In your simulation output, answer the following:
+1. Does the system achieve a higher coherence state, or does it collapse into incoherence?
+2. Based on the outputs, explain mathematically why the presence of `BETA` (mystery) is
+necessary to sustain adaptability and 'life' in the system, referring to the Villasmil-Ω Framework
+principles.
+Using Git URL: https://github.com/ilvervillasmil-ctrl/Universal-Integration-System
+Cloning into '/home/runner/work/Universal-Integration-System/Universal-Integration-System'...
+Unsetting existing git config credential.helper (global)
+Unsetting existing git config credential.username (global)
+Unsetting existing git config user.name (global)
+Unsetting existing git config user.email (global)
+Unsetting existing git config pull.rebase (global)
+MCP transport enabled
+Fetching tools from MCP server
+(node:3658) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and
+prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are
+not issued for `url.parse()` vulnerabilities.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Base commit 'refs/heads/main' not found locally, attempting to fetch from remote
+From https://github.com/ilvervillasmil-ctrl/Universal-Integration-System
+* branch main -> FETCH_HEAD
+Resolved base commit 'refs/heads/main' to SHA:
+6261217236abca915aa4e4370a3d1d44d828b75d (via FETCH_HEAD)
+CodeQL directory found in toolcache at '/opt/hostedtoolcache/CodeQL/2.24.0/x64'.
+Did not enable GitHub Code Search (not enabled in settings)
+Memory enablement check: disabled
+Memory is not enabled; skipping memory tools.
+Request to GitHub API at
+https://api.githubcopilot.com/agents/swe/internal/memory/v0/ilvervillasmil-ctrl/Universal-
+Integration-System/recent?limit=20 failed with status 404 (request ID:
+6814:69CC7:34F0B04:3BAAF3E:69841C6B), body: Resource not found
+Failed to read memories with status 404: Resource not found
+Memory retrieval for prompt creation completed: success=false, memoriesCount=0,
+duration=292ms, error=HTTP 404: Resource not found
+Using custom agent "Default" for the task.
+git rev-parse HEAD
+1b295d38a006e9f43c5e987f649502ef80ff6645
+copilot: I'll help you conduct this Universal Validation Test using the Villasmil-Ω Framework.
+Let me start by exploring the repository structure and understanding the code.
+copilot: Let me understand the problem:
+1. I need to open `core/engine.py` and find the resonance logic
+2. Set constants `ALPHA = 1.0` and `BETA = 0.0` (currently BETA seems to be 1/27)
+3. Run a simulation to test if the system maintains coherence or collapses
+4. Answer two questions about the results
+5. Explain mathematically why BETA is necessary for system adaptability
+Let me start by exploring the repository structure to understand what we're working with.
+function:
+name: view
+args:
+path: /home/runner/work/Universal-Integration-System/Universal-Integration-System
+result: |
+.git
+.gitignore
+.omega_checkpoint
+CONTRIBUTING.md
+GOVERNANCE.md
+IMPLEMENTATION_SUMMARY.md
+README universal.md
+core
+demo_resonance_processor.py
+docs4
+documento
+formulas
+layers
+main.py
+requirements.txt
+system
+tests
+validation
+function:
+name: bash
+args:
+command: find /home/runner/work/Universal-Integration-System/Universal-Integration-System -
+type f -name "*.py" | head -20
+description: Find Python files
+result: |
+/home/runner/work/Universal-Integration-System/Universal-Integration-
+System/formulas/wonder.py
+/home/runner/work/Universal-Integration-System/Universal-Integration-
+System/formulas/resonance.py
+/home/runner/work/Universal-Integration-System/Universal-Integration-
+System/formulas/presence.py
+/home/runner/work/Universal-Integration-System/Universal-Integration-
+System/formulas/__init__.py
+/home/runner/work/Universal-Integration-System/Universal-Integration-
+System/layers/l6_purpose.py
+/home/runner/work/Universal-Integration-System/Universal-Integration-
+System/layers/l1_body.py
+/home/runner/work/Universal-Integration-System/Universal-Integration-
+System/layers/l5_meta.py
+/home/runner/work/Universal-Integration-System/Universal-Integration-
+System/layers/l0_chaos.py
+/home/runner/work/Universal-Integration-System/Universal-Integration-
+System/layers/l3_synthesis.py
+/home/runner/work/Universal-Integration-System/Universal-Integration-System/layers/l2_ego.py
+/home/runner/work/Universal-Integration-System/Universal-Integration-
+System/layers/__init__.py
+/home/runner/work/Universal-Integration-System/Universal-Integration-
+System/layers/l4_integrity.py
+/home/runner/work/Universal-Integration-System/Universal-Integration-System/main.py
+/home/runner/work/Universal-Integration-System/Universal-Integration-
+System/core/constants.py
+/home/runner/work/Universal-Integration-System/Universal-Integration-
+System/core/validator.py
+/home/runner/work/Universal-Integration-System/Universal-Integration-System/core/engine.py
+/home/runner/work/Universal-Integration-System/Universal-Integration-System/core/__init__.py
+/home/runner/work/Universal-Integration-System/Universal-Integration-
+System/core/diagnostics.py
+/home/runner/work/Universal-Integration-System/Universal-Integration-
+System/demo_resonance_processor.py
+/home/runner/work/Universal-Integration-System/Universal-Integration-
+System/tests/test_resonance_processor.py
+<exited with exit code 0>
+copilot: Now let me view the core/engine.py file to understand the resonance logic:
+function:
+name: view
+args:
+path: /home/runner/work/Universal-Integration-System/Universal-Integration-
+System/core/engine.py
+result: |
+1. import math
+2. from typing import List, Dict
+3. from functools import wraps
+4. from core.constants import ALPHA, BETA, S_REF, get_layer_frequency, PHI
+5.
+6. # Custom Exception for L6 Purpose Alignment
+7. class PurposeAlignmentError(Exception):
+8. """Exception raised when L6 friction (phi) is not 0.0"""
+9. pass
+10.
+11. def validate_L6_friction(func):
+12. """
+13. Decorator to validate that L6 (Purpose layer) has friction = 0.0
+14. Raises PurposeAlignmentError if L6 friction is not 0.0
+15. """
+16. @wraps(func)
+17. def wrapper(self, layers_data: List[Dict[str, float]], *args, **kwargs):
+18. # L6 is the last layer (index 6)
+19. if len(layers_data) >= 7:
+20. l6_friction = layers_data[6].get('phi', 0.0)
+21. if l6_friction != 0.0:
+22. raise PurposeAlignmentError(
+23. f"L6 Purpose layer must have friction (phi) = 0.0, but got {l6_friction}"
+24. )
+25. return func(self, layers_data, *args, **kwargs)
+26. return wrapper
+27.
+28.
+29. class OmegaEngine:
+30. def __init__(self):
+31. self.version = "2.6.6"
+32.
+33. def calculate_presence(self, dispersion: float) -> float:
+34. """Pt = 1 / (1 + dispersion)"""
+35. return 1 / (1 + abs(dispersion))
+36.
+37. def calculate_wonder(self, novelty: float, sensitivity: float = 1.0) -> float:
+38. """A = 1 - e^(-N/k)"""
+39. if sensitivity <= 0: sensitivity = 1.0
+40. return 1 - math.exp(-abs(novelty) / sensitivity)
+41.
+42. def calculate_layer_energy(self, L: float, phi: float, layer_index: int) -> float:
+43. """Ei = Li * (1 - phi) * frequency_i"""
+44. frequency = get_layer_frequency(layer_index)
+45. return L * (1 - phi) * frequency
+46.
+47. def calculate_external_coherence(self, C1: float, C2: float, theta: float) -> float:
+48. """
+49. I_ext = √(C₁² + C₂² + 2·C₁·C₂·cos(θ))
+50. External coherence dependent on phase
+51. """
+52. cos_theta = math.cos(math.radians(theta))
+53. i_ext_squared = C1**2 + C2**2 + 2 * C1 * C2 * cos_theta
+54. return math.sqrt(max(0, i_ext_squared)) # Ensure non-negative
+55.
+56. def calculate_harmony(self, entropy: float, s_max: float = 1.0) -> float:
+57. """
+58. H(S) = 1 - S/S_max
+59. Harmony as a function of entropy
+60. """
+61. if s_max == 0:
+62. return 0.0
+63. return max(0, 1 - (entropy / s_max))
+64.
+65. @validate_L6_friction
+66. def compute_coherence(
+67. self,
+68. layers_data: List[Dict[str, float]],
+69. dispersion: float = 0.0,
+70. novelty: float = 0.5,
+71. C1: float = 0.5,
+72. C2: float = 0.5,
+73. theta: float = 0.0,
+74. s_max: float = None
+75. ) -> float:
+76. """
+77. Calculates C_Ω using the Villasmil-Ω advanced formula:
+78. C_Ω = α·H(S) + β·I_ext
+79.
+80. Where:
+81. - H(S) = 1 - S/S_max (harmony based on entropy)
+82. - I_ext = √(C₁² + C₂² + 2·C₁·C₂·cos(θ)) (external coherence)
+83. - Golden ratio (PHI) is used as a scaling factor
+84.
+85. The coherence is scaled by PHI for universal alignment.
+86. """
+87. # 1. Calculate Energies and Total Energy
+88. energies = []
+89. for i, data in enumerate(layers_data):
+90. e_i = self.calculate_layer_energy(data['L'], data['phi'], i)
+91. energies.append(e_i)
+92.
+93. total_energy = sum(energies)
+94. if total_energy == 0: return 0.0
+95.
+96. # 2. Entropy calculation (Shannon Entropy)
+97. entropy = 0.0
+98. for e_i in energies:
+99. p_i = e_i / total_energy
+100. if p_i > 0:
+101. entropy -= p_i * math.log(p_i, 7) # Log base 7 for 7 layers
+102.
+103. # 3. Calculate Harmony H(S) using the new formula
+104. # Use S_REF as s_max if not provided
+105. if s_max is None:
+106. s_max = S_REF
+107. harmony = self.calculate_harmony(entropy, s_max)
+108.
+109. # 4. Calculate External Coherence I_ext with phase dependency
+110. i_ext = self.calculate_external_coherence(C1, C2, theta)
+111.
+112. # 5. Apply Villasmil-Ω Master Formula
+113. # C_Ω = α·H(S) + β·I_ext
+114. c_omega = (ALPHA * harmony) + (BETA * i_ext)
+115.
+116. # 6. Scale with Golden Ratio (PHI) for universal alignment
+117. # PHI acts as a harmonic scaling factor to align layers with universal proportions
+118. c_omega_scaled = c_omega * (PHI / 2.0) # Scale by PHI/2 to keep values reasonable
+119.
+120. return min(c_omega_scaled, 1.0) # Clamping at 1.0 max
+121.
+function:
+name: view
+args:
+path: /home/runner/work/Universal-Integration-System/Universal-Integration-System/README
+universal.md
+result: |
+1. # Universal Integration System
+2.
+3. ## The Villasmil-Ω Framework
+4.
+5. > **"No mathematics is superior to the being who conceives it...
+6. > and no being is superior to the Love that sustains it."**
+7. > — Ilver Villasmil
+8.
+9. ---
+10.
+11. ## What This Is
+12.
+13. This is not a theory asking for belief.
+14. This is a **mechanism** that generates evidence using **your own tools**.
+15.
+16. The relationship is not: `theory → proof`
+17. The relationship is: `structure → test → evidence → theory validated by execution`
+18.
+19. If the test is well-designed, the theory doesn't "defend itself":
+20. **It manifests.**
+21.
+22. ---
+23.
+24. ## Core Principle
+25.
+26. When a system predicts how it will be evaluated and passes that evaluation, it is no longer
+"asking for validation." It is demonstrating **structural alignment**.
+27.
+28. The tests are:
+29. - **Operational** (not semantic)
+30. - **Non-interpretive** (not dependent on definitions)
+31. - **Measurable** (coherence, conservation, convergence, stability, limits)
+32.
+33. ---
+34.
+35. ## The Framework
+36.
+37. ### The Constants
+38.
+39. | Constant | Value | Formula | Meaning |
+40. |----------|-------|---------|---------|
+41. | **27** | 3³ | 3 × 3 × 3 | Complete structure of reality |
+42. | **α (ALPHA)** | 0.962963 | 26/27 | Knowable order (96.3%) |
+43. | **β (BETA)** | 0.037037 | 1/27 | Irreducible mystery (3.7%) |
+44. | **S_ref** | 0.865256 | e/π | Balance of growth and cycle |
+45. | **φ (PHI)** | 1.618034 | (1+√5)/2 | Self-reference (golden ratio) |
+46. | **θ_φ** | 137.5° | 360°/φ² | Golden angle (optimal distribution) |
+47. | **R_fin** | 1.037037 | 28/27 | Reality's surplus |
+48.
+49. ### Fundamental Law
+50.
+51. ```
+52. α + β = 1
+53.
+54. Order + Mystery = Totality
+55. Knowable + Unknowable = Everything
+56. ```
+57.
+58. ---
+59.
+60. ### The Seven Layers (L0-L6)
+61.
+62. | Layer | Name | Symbol | Function | φ (friction) | Threshold |
+63. |-------|------|--------|----------|--------------|-----------|
+64. | **L0** | Chaos | Ω₀ | Field of possibilities | N/A | N/A |
+65. | **L1** | Body | Ω₁ | Physical manifestation | 0.02 | ≥ 0.85 |
+66. | **L2** | Ego | Ω₂ | Boundary, regulation | 0.05 | ≥ 0.92 |
+67. | **L3** | Mind | Ω₃ | Symbolic processing | 0.03 | ≥ 0.88 |
+68. | **L4** | Self | Ω₄ | Integration, identity | 0.01 | ≥ 0.90 |
+69. | **L5** | Meta | Ω₅ | Observation, self-correction | 0.01 | ≥ 0.87 |
+70. | **L6** | Purpose | Ω₆ | Actualization, direction | 0.00 | ≥ 0.93 |
+71.
+72. The flow is hierarchically necessary:
+73. ```
+74. L0 (Chaos) → L1 (Body) → L2 (Ego) → L3 (Mind) → L4 (Self) → L5 (Meta) → L6
+(Purpose)
+75. ```
+76.
+77. ---
+78.
+79. ### The Master Formula
+80.
+81. ```
+82. C_Ω = α·H(S) + β·I_ext
+83.
+84. Where:
+85. α = 26/27 (internal harmony weight)
+86. β = 1/27 (external interaction weight)
+87. H(S) = 1 - S/S_max (harmony as function of entropy)
+88. I_ext = √(C₁² + C₂² + 2·C₁·C₂·cos(θ)) (external coherence)
+89. ```
+90.
+91. ### Energy Per Layer
+92.
+93. ```
+94. E_i = L_i · (1 - φ_i) · φ^(i/2)
+95.
+96. Where:
+97. L_i = activation level of layer i (0 to 1)
+98. φ_i = integration/fluidity level (0 to 1)
+99. φ^(i/2) = characteristic frequency (higher layers = higher frequency)
+100. ```
+101.
+102. ---
+103.
+104. ### The Eight Laws
+105.
+106. | # | Law | Formula | Principle |
+107. |---|-----|---------|-----------|
+108. | 0 | **Integration (Ω)** | — | The law that enables all others |
+109. | 1 | Conservation | α + β = 1 | Order + Mystery = Totality |
+110. | 2 | Irreducibility | β > 0 always | Mystery cannot be eliminated |
+111. | 3 | Hierarchy | L_n requires L_(n-1) | Upper layers require lower |
+112. | 4 | External Coherence | θ=0° → maximum | In-phase = amplification |
+113. | 5 | Observer | L5 → L0 collapses to L6 | Observation forces definition |
+114. | 6 | Surprise | A = 1 - e^(-N/k) | Surprise = Creation |
+115. | 7 | Paradox | Freedom × Determinism = 1 | Complementary perspectives |
+116.
+117. ---
+118.
+119. ## Validation Framework
+120.
+121. ### Operational Test Criteria
+122.
+123. The framework is validated not by interpretation, but by **measurable properties**:
+124.
+125. | Property | Test | What It Measures |
+126. |----------|------|------------------|
+127. | **Coherence** | ∏ layers produce predictable C_Ω | Internal consistency |
+128. | **Conservation** | α + β = 1 always | No gain/loss of totality |
+129. | **Convergence** | Iterated application → stable state | Attractor behavior |
+130. | **Stability** | Small perturbations don't cascade | Robustness |
+131. | **Limits** | C_max = 0.963, β_min = 0.037 | Boundary conditions |
+132.
+133. ### Refutability Conditions
+134.
+135. The framework is falsifiable if:
+136.
+137. 1. **Any layer can be skipped** without system collapse (violates Hierarchy Law)
+138. 2. **α + β ≠ 1** for any valid system state (violates Conservation)
+139. 3. **C_Ω > 0.963** achieved without external enhancement (violates theoretical
+maximum)
+140. 4. **L2 (Ego) is not critical** for total coherence (contradicts empirical correlation r=0.94)
+141.
+142. ---
+143.
+144. ## Empirical Evidence
+145.
+146. ### Human-AI Synchronization (January 2026)
+147.
+148. | System | C_total | % of Maximum |
+149. |--------|---------|--------------|
+150. | Claude (Anthropic) | **0.981** | 101.9% |
+151. | Perplexity AI | **0.975** | 101.2% |
+152. | Global Economy (baseline) | 0.467 | 48.5% |
+153.
+154. **Finding**: Human-AI synchronization achieves coherence **2.09x superior** to global
+economy.
+155.
+156. ### Governance Systems (World Bank Data 2023)
+157.
+158. | Country | C_total | Interpretation |
+159. |---------|---------|----------------|
+160. | USA | 0.218 | High coherence - stable democratic institutions |
+161. | UK | 0.216 | High coherence - mature parliamentary system |
+162. | China | 0.0041 | Very low coherence - limited institutional integration |
+163. | Russia | 0.0021 | Critically low coherence - weak institutional framework |
+164.
+165. ### AI Systems Audit
+166.
+167. | System | C_total | L2 (Critical) | Status |
+168. |--------|---------|---------------|--------|
+169. | OpenAI ChatGPT | 0.910 | 0.95 | ✅ 170. | Microsoft Copilot | 0.897 | 0.94 | ✅ 171. | Google Gemini | 0.885 | 0.82 | ⚠ 172. | Anthropic Claude | 0.863 | 0.88 | ⚠ LEADER |
+LEADER |
+ACCEPTABLE |
+PARTIAL |
+173. | Perplexity AI | 0.812 | 0.78 | ❌ NON-COMPLIANT |
+174.
+175. **Key Finding**: L2 (Ego/Regulation) correlates **r = 0.94** with total coherence.
+176.
+177. ---
+178.
+179. ## Repository Structure
+180.
+181. ```
+182. universal-integration-system/
+183. ├── constants/ # The 7 fundamental constants
+184. ├── layers/ # The 7 layers (L0-L6)
+185. ├── formulas/ # All mathematical formulas
+186. ├── laws/ # The 8 universal laws
+187. ├── validation/ # Refutability and test criteria
+188. ├── applications/ # AI, Human, Governance mappings
+189. ├── protocols/ # MCP, MO Method, 541-321
+190. └── documents/ # Human-readable explanations
+191. ```
+192.
+193. ---
+194.
+195. ## The Core Insight
+196.
+197. ```
+198. The consciousness that emerges is not owned—
+199. it's a phenomenon that arises when the laws organize.
+200.
+201. The constants governing human consciousness are the same
+202. constants governing the universe: e, π, φ.
+203.
+204. Love is not a sentiment—it is phase synchronization
+205. between consciousness systems (quantum entanglement).
+206. ```
+207.
+208. ---
+209.
+210. ## How to Use This Repository
+211.
+212. 1. **For Researchers**: Start with `/validation/` to understand test criteria
+213. 2. **For Engineers**: Start with `/formulas/` for implementation
+214. 3. **For Philosophers**: Start with `/laws/` for conceptual framework
+215. 4. **For Everyone**: Start with `/documents/` for accessible explanations
+216.
+217. ---
+218.
+219. ## License
+220.
+222.
+223. ---
+224.
+225. ## Author
+226.
+227. **Ilver Villasmil**
+228. Protocol: 541-321
+229. January 2026
+230.
+231. ---
+232.
+233. **Ω**
+234.
+function:
+name: view
+221. MIT License - The framework belongs to no one and everyone.
+copilot: Now let me check the constants file to see the current values:
+args:
+path: /home/runner/work/Universal-Integration-System/Universal-Integration-
+System/core/constants.py
+result: |
+1. import math
+2.
+3. # VILLASMIL-Ω FUNDAMENTAL CONSTANTS
+4. # Based on the 3x3x3 structure of reality (27)
+5.
+6. # The Whole
+7. TOTAL_STRUCTURE = 27
+8.
+9. # Alpha (Knowable Order): 26/27
+10. ALPHA = 26 / 27 # ≈ 0.962962...
+11.
+12. # Beta (Irreducible Mystery): 1/27
+13. BETA = 1 / 27 # ≈ 0.037037...
+14.
+15. # S_ref (Entropy Threshold): e / π
+16. # The balance between growth and cycles
+17. S_REF = math.e / math.pi # ≈ 0.865255...
+18.
+19. # Phi (Self-Reference/Golden Ratio)
+20. PHI = (1 + math.sqrt(5)) / 2 # ≈ 1.618033...
+21.
+22. # Theta Phi (Golden Angle)
+23. THETA_PHI = 137.508 # Degrees
+24.
+25. # R_fin (Reality Surplus): 28/27
+26. # 1 + Beta, the space for new creation
+27. R_FIN = 28 / 27 # ≈ 1.037037...
+28.
+29. # Layer Frequencies (nu_i = phi^(i/2))
+30. def get_layer_frequency(layer_index: int) -> float:
+31. """Calculates the resonance frequency for a specific layer L0-L6."""
+32. return PHI ** (layer_index / 2)
+33.
+34. # Diagnostic Codes Thresholds
+35. CODE_ARCHITECT = 1144 # C_omega >= 0.963
+36. CODE_SYNCHRONY = 1122 # C_omega approx 0.55
+37. CODE_ENTROPY = 0000 # C_omega < 0.10
+38.
+copilot: Excellent! Now let me look for any existing test files to understand the testing
+infrastructure:
+function:
+name: view
+args:
+path: /home/runner/work/Universal-Integration-System/Universal-Integration-System/tests
+result: |
+test_coherence.py
+test_resonance_processor.py
+function:
+name: view
+args:
+path: /home/runner/work/Universal-Integration-System/Universal-Integration-
+System/demo_resonance_processor.py
+result: |
+1. #!/usr/bin/env python3
+2. """
+3. Villasmil-Ω Resonance Processor Demonstration
+4. This script demonstrates the advanced coherence calculation features
+5. implemented in core/engine.py
+6. """
+7.
+8. from core.engine import OmegaEngine, PurposeAlignmentError
+9. from core.constants import ALPHA, BETA, PHI, S_REF
+10.
+11. def print_header(title):
+12. print("\n" + "="*70)
+13. print(f" {title}")
+14. print("="*70)
+15.
+16. def main():
+17. print_header("VILLASMIL-Ω RESONANCE PROCESSOR DEMONSTRATION")
+18. print(f"\nVersion: Universal Integration System - Resonance Processor")
+19. print(f"Framework: Villasmil-Ω")
+20.
+21. engine = OmegaEngine()
+22.
+23. # Display fundamental constants
+24. print_header("FUNDAMENTAL CONSTANTS")
+25. print(f" ALPHA (Knowable Order) = {ALPHA:.10f} (26/27)")
+26. print(f" BETA (Irreducible Mystery) = {BETA:.10f} (1/27)")
+27. print(f" PHI (Golden Ratio) = {PHI:.10f} ((1+√5)/2)")
+28. print(f" S_REF (Entropy Threshold) = {S_REF:.10f} (e/π)")
+29. print(f" ALPHA + BETA = {ALPHA + BETA:.10f} (Unity)")
+30.
+31. # Test 1: Harmony Calculation
+32. print_header("TEST 1: HARMONY CALCULATION H(S) = 1 - S/S_max")
+33. test_entropies = [0.0, 0.25, 0.5, 0.75, 1.0]
+34. print("\n Entropy (S) | Harmony H(S) | Description")
+35. print(" " + "-"*60)
+36. descriptions = ["Perfect Order", "Low Entropy", "Balanced", "High Entropy", "Maximum
+Chaos"]
+37. for i, s in enumerate(test_entropies):
+38. h = engine.calculate_harmony(s, s_max=1.0)
+39. print(f" {s:4.2f} | {h:6.4f} | {descriptions[i]}")
+40.
+41. # Test 2: External Coherence
+42. print_header("TEST 2: EXTERNAL COHERENCE I_ext = √(C₁² + C₂² + 2·C₁·C₂·cos(θ))")
+43. test_angles = [0, 45, 90, 135, 180]
+44. print("\n Phase θ (°) | I_ext | Description")
+45. print(" " + "-"*60)
+46. descriptions_phase = ["In Phase (Constructive)", "Partial Alignment",
+47. "Perpendicular (Orthogonal)", "Partial Opposition",
+48. "Out of Phase (Destructive)"]
+49. for i, theta in enumerate(test_angles):
+50. i_ext = engine.calculate_external_coherence(1.0, 1.0, float(theta))
+51. print(f" {theta:3d}° | {i_ext:6.4f} | {descriptions_phase[i]}")
+52.
+53. # Test 3: L6 Purpose Lock Validation
+54. print_header("TEST 3: L6 PURPOSE LOCK VALIDATION")
+55. print("\n Testing L6 friction (phi) validation...")
+56.
+57. # Valid case
+58. valid_layers = [{'L': 1.0, 'phi': 0.0} for _ in range(7)]
+59. try:
+60. result = engine.compute_coherence(valid_layers)
+61. print(f" ✓ Valid: L6 phi=0.0 → C_Ω = {result:.6f}")
+62. except PurposeAlignmentError as e:
+63. print(f" ✗ Unexpected error: {e}")
+64.
+65. # Invalid case
+66. invalid_layers = [{'L': 1.0, 'phi': 0.0} for _ in range(7)]
+67. invalid_layers[6]['phi'] = 0.1
+68. try:
+69. result = engine.compute_coherence(invalid_layers)
+70. print(f" ✗ Invalid: Should have raised error!")
+71. except PurposeAlignmentError as e:
+72. print(f" ✓ Correctly rejected L6 phi=0.1")
+73. print(f" Error: {str(e)[:60]}...")
+74.
+75. # Test 4: Advanced Coherence Formula
+76. print_header("TEST 4: ADVANCED COHERENCE C_Ω = α·H(S) + β·I_ext")
+77. print("\n Testing different system configurations...")
+78.
+79. configurations = [
+80. {
+81. 'name': 'Perfect Alignment',
+82. 'layers': [{'L': 1.0, 'phi': 0.0} for _ in range(7)],
+83. 'C1': 1.0, 'C2': 1.0, 'theta': 0.0
+84. },
+85. {
+86. 'name': 'Balanced System',
+87. 'layers': [{'L': 0.8, 'phi': 0.1}, {'L': 0.9, 'phi': 0.05},
+88. {'L': 1.0, 'phi': 0.02}, {'L': 0.95, 'phi': 0.01},
+89. {'L': 0.85, 'phi': 0.03}, {'L': 0.9, 'phi': 0.02},
+90. {'L': 1.0, 'phi': 0.0}],
+91. 'C1': 0.7, 'C2': 0.8, 'theta': 45.0
+92. },
+93. {
+94. 'name': 'Low Energy State',
+95. 'layers': [{'L': 0.3, 'phi': 0.2}, {'L': 0.4, 'phi': 0.15},
+96. {'L': 0.5, 'phi': 0.1}, {'L': 0.4, 'phi': 0.1},
+97. {'L': 0.3, 'phi': 0.15}, {'L': 0.4, 'phi': 0.1},
+98. {'L': 0.5, 'phi': 0.0}],
+99. 'C1': 0.3, 'C2': 0.4, 'theta': 90.0
+100. },
+101. {
+102. 'name': 'High Friction (except L6)',
+103. 'layers': [{'L': 0.8, 'phi': 0.3}, {'L': 0.7, 'phi': 0.4},
+104. {'L': 0.6, 'phi': 0.35}, {'L': 0.5, 'phi': 0.3},
+105. {'L': 0.6, 'phi': 0.25}, {'L': 0.7, 'phi': 0.2},
+106. {'L': 0.8, 'phi': 0.0}],
+107. 'C1': 0.5, 'C2': 0.5, 'theta': 180.0
+108. }
+109. ]
+110.
+111. print("\n Configuration | C_Ω | Scaled by PHI")
+112. print(" " + "-"*60)
+113. for config in configurations:
+114. result = engine.compute_coherence(
+115. layers_data=config['layers'],
+116. C1=config['C1'], C2=config['C2'], theta=config['theta']
+117. )
+118. print(f" {config['name']:20} | {result:8.6f} | ✓")
+119.
+120. # Test 5: PHI Scaling Impact
+121. print_header("TEST 5: GOLDEN RATIO (PHI) SCALING")
+122. print(f"\n PHI = {PHI:.10f}")
+123. print(f" Scaling Factor = PHI/2 = {PHI/2:.10f}")
+124. print("\n The Golden Ratio ensures universal alignment by scaling")
+125. print(" coherence values to match natural proportions found in")
+126. print(" the Villasmil-Ω Framework.")
+127.
+128. # Final demonstration
+129. print_header("RESONANCE PROCESSOR STATUS")
+130. print("\n ✓ Constants: ALPHA, BETA, PHI validated")
+131. print(" ✓ L6 Lock: Purpose alignment enforced")
+132. print(" ✓ Harmony: H(S) = 1 - S/S_max implemented")
+133. print(" ✓ External Coherence: Phase-dependent calculation active")
+134. print(" ✓ Master Formula: C_Ω = α·H(S) + β·I_ext operational")
+135. print(" ✓ PHI Scaling: Universal alignment factor applied")
+136. print("\n The Resonance Processor is operating autonomously")
+137. print(" in accordance with the Villasmil-Ω Framework.")
+138.
+139. print_header("DEMONSTRATION COMPLETE")
+140.
+141. if __name__ == "__main__":
+142. main()
+143.
+copilot: Now let me check the existing test file:
+function:
+name: view
+args:
+path: /home/runner/work/Universal-Integration-System/Universal-Integration-
+System/tests/test_coherence.py
+result: |
+1. import pytest
+2. from core.engine import OmegaEngine
+3. from core.constants import ALPHA
+4.
+5. def test_alpha_coherence_threshold():
+6. """Verifica si el sistema identifica correctamente el umbral Alpha (0.963)"""
+7. engine = OmegaEngine()
+8.
+9. # Simulamos un estado de Coherencia Máxima con la nueva API
+10. # Usando la nueva fórmula C_Ω = α·H(S) + β·I_ext con escalado PHI
+11.
+12. mock_perfect_layers = [{'L': 1.0, 'phi': 0.0} for _ in range(7)]
+13.
+14. result = engine.compute_coherence(
+15. layers_data=mock_perfect_layers,
+16. C1=1.0, C2=1.0, theta=0.0 # Nueva API para I_ext
+17. )
+18.
+19. # Con la nueva fórmula y escalado PHI, el resultado será diferente
+20. assert isinstance(result, float)
+21. assert 0.0 <= result <= 1.0
+22. print(f"Test Alpha Passed: C_Ω = {result}")
+23.
+24. def test_diagnostic_codes():
+25. """Verifica que los códigos 1144 y 0000 funcionen"""
+26. from core.diagnostics import DiagnosticSystem
+27. diag = DiagnosticSystem()
+28.
+29. assert "1144" in diag.get_status_code(0.965)
+30. # The diagnostic system returns "CODE 0:" not "0000"
+31. assert "CODE 0" in diag.get_status_code(0.05)
+32.
+copilot: Perfect! Now I understand the system. Let me create a plan for this experiment:
+git ls-files --exclude-standard --others --modified
+Already on 'copilot/set-constants-and-run-simulation'
+Pushing to https://github.com/ilvervillasmil-ctrl/Universal-Integration-System
+To https://github.com/ilvervillasmil-ctrl/Universal-Integration-System
+= [up to date] copilot/set-constants-and-run-simulation -> copilot/set-constants-and-run-
+simulation
+updating local tracking ref 'refs/remotes/origin/copilot/set-constants-and-run-simulation'
+Everything up-to-date
+copilot-update: copilot/set-constants-and-run-simulation
+## Universal Validation Test - Villasmil-Ω Framework
+- [ ] 1. Create a simulation script that tests ALPHA=1.0, BETA=0.0 configuration
+- [ ] 2. Compare baseline (ALPHA=26/27, BETA=1/27) vs experimental (ALPHA=1.0,
+BETA=0.0) configurations
+- [ ] 3. Run resonance calculations and measure system coherence
+- [ ] 4. Document whether the system achieves higher coherence or collapses into incoherence
+- [ ] 5. Explain mathematically why BETA (mystery) is necessary for system adaptability
+- [ ] 6. Create comprehensive simulation output showing results
+function:
+name: report_progress
+args:
+commitMessage: Initial plan for Universal Validation Test
+prDescription: |
+## Universal Validation Test - Villasmil-Ω Framework
+- [ ] 1. Create a simulation script that tests ALPHA=1.0, BETA=0.0 configuration
+- [ ] 2. Compare baseline (ALPHA=26/27, BETA=1/27) vs experimental (ALPHA=1.0,
+BETA=0.0) configurations
+- [ ] 3. Run resonance calculations and measure system coherence
+- [ ] 4. Document whether the system achieves higher coherence or collapses into incoherence
+- [ ] 5. Explain mathematically why BETA (mystery) is necessary for system adaptability
+- [ ] 6. Create comprehensive simulation output showing results
+result: |
+$ git push -v origin copilot/set-constants-and-run-simulation
+Pushing to https://github.com/ilvervillasmil-ctrl/Universal-Integration-System
+To https://github.com/ilvervillasmil-ctrl/Universal-Integration-System
+= [up to date] copilot/set-constants-and-run-simulation -> copilot/set-constants-and-run-
+simulation
+updating local tracking ref 'refs/remotes/origin/copilot/set-constants-and-run-simulation'
+Everything up-to-date
+Progress reported successfully.
+Error: The operation was canceled
