@@ -207,3 +207,6 @@ VPSI automatically validates mathematics across all branches.
 ---
 
 **∎**
+
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/e3310c87-ca9c-4379-b1f5-86e17f626cec" />
+
