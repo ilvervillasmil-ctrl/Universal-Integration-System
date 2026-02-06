@@ -3,6 +3,8 @@
 ## Overview
 Successfully refactored `core/engine.py` to implement the Resonance Processor according to the Villasmil-Ω Framework specifications.
 
+**Major Update (2026-02-05):** Geometric proof of κ = π/4 completed, validating the β-renormalization mechanism.
+
 ## Implemented Features
 
 ### 1. Constants (Already Defined in `core/constants.py`)
@@ -16,6 +18,8 @@ Successfully refactored `core/engine.py` to implement the Resonance Processor ac
   - Validates L6 friction (φ) is exactly 0.0
   - Raises `PurposeAlignmentError` if violated
   - Applied to `compute_coherence` method
+
+**Note:** β value used in coherence calculation represents β_theoretical (1/27). The empirically effective value β_effective = (1/27) × (π/4) ≈ 0.0291 has been mathematically proven via geometric projection. See `KAPPA_PROOF_SUMMARY.md` for details.
 
 ### 3. Advanced Coherence Calculation
 Implemented the master formula: **C_Ω = α·H(S) + β·I_ext**
@@ -153,3 +157,10 @@ All calculations properly scaled by PHI and validated for L6 friction.
 ## Conclusion
 
 The Resonance Processor has been successfully implemented with all required features. The `core/engine.py` file now supports autonomous coherence calculation according to the Villasmil-Ω Framework, with comprehensive testing and validation.
+
+**Theoretical Foundation (2026-02-05):** The β-renormalization factor κ = π/4 has been mathematically proven via five independent approaches, validating the framework's geometric foundation. This is no longer a hypothesis but a proven mathematical theorem.
+
+**Related Documentation:**
+- `KAPPA_PROOF_SUMMARY.md` - Accessible proof summary
+- `BETA_RENORMALIZATION.md` - Detailed technical analysis  
+- `publications/papers/geometric_proof_kappa.tex` - Complete mathematical proof

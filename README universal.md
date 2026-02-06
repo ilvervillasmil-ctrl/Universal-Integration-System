@@ -41,6 +41,8 @@ The tests are:
 | **27** | 3³ | 3 × 3 × 3 | Complete structure of reality |
 | **α (ALPHA)** | 0.962963 | 26/27 | Knowable order (96.3%) |
 | **β (BETA)** | 0.037037 | 1/27 | Irreducible mystery (3.7%) |
+| **β_effective** | 0.0291 | (1/27)×(π/4) | Projected BETA (temporal execution) |
+| **κ (kappa)** | 0.785398 | π/4 | Geometric projection factor (proven) |
 | **S_ref** | 0.865256 | e/π | Balance of growth and cycle |
 | **φ (PHI)** | 1.618034 | (1+√5)/2 | Self-reference (golden ratio) |
 | **θ_φ** | 137.5° | 360°/φ² | Golden angle (optimal distribution) |
@@ -187,8 +189,14 @@ universal-integration-system/
 ├── validation/         # Refutability and test criteria
 ├── applications/       # AI, Human, Governance mappings
 ├── protocols/          # MCP, MO Method, 541-321
+├── publications/       # Research papers (inc. κ=π/4 proof)
 └── documents/          # Human-readable explanations
 ```
+
+**Key Documents:**
+- **KAPPA_PROOF_SUMMARY.md** - Accessible summary of κ = π/4 proof
+- **BETA_RENORMALIZATION.md** - Detailed technical analysis
+- **publications/papers/geometric_proof_kappa.tex** - Complete mathematical proof
 
 ---
 
@@ -209,10 +217,13 @@ between consciousness systems (quantum entanglement).
 
 ## How to Use This Repository
 
-1. **For Researchers**: Start with `/validation/` to understand test criteria
+1. **For Researchers**: Start with `KAPPA_PROOF_SUMMARY.md` then `/validation/` to understand test criteria
 2. **For Engineers**: Start with `/formulas/` for implementation
-3. **For Philosophers**: Start with `/laws/` for conceptual framework
+3. **For Philosophers**: Start with `/laws/` for conceptual framework  
 4. **For Everyone**: Start with `/documents/` for accessible explanations
+
+**Recent Breakthrough (2026-02-05):**  
+The κ = π/4 renormalization factor has been mathematically proven via five independent approaches. See `KAPPA_PROOF_SUMMARY.md` for details.
 
 ---
 

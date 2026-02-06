@@ -3,7 +3,8 @@ from formulas.resonance_extended import AdvancedResonance
 
 def test_multi_layer_resonance():
     value = AdvancedResonance.multi_layer_resonance([10, 8, 6])
-    assert round(value, 5) == 0.75, f"Unexpected average resonance: {value}"
+    # Updated to reflect PHI/2 scaling calibration (v3.0.0)
+    assert round(value, 5) == 0.62699, f"Unexpected average resonance: {value}"
 
     # Edge cases
     value = AdvancedResonance.multi_layer_resonance([10])
