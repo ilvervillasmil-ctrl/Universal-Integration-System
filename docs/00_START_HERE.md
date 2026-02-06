@@ -12,7 +12,15 @@ This framework bridges mathematics, physics, and consciousness through a single 
 **Follow this path:**
 1. **First** → `philosophy.md` (5 min overview)
 2. **Then** → `THE_STRUCTURE_OF_THOUGHT.md` (15 min deep dive)
-3. **Finally** → `docs4.md` (30 min complete architecture)
+3. **Next** → `../HARD_PROBLEM_DISSOLUTION.md` (30 min consciousness philosophy)
+4. **Finally** → `docs4.md` (30 min complete architecture)
+
+### Want to Understand Consciousness?
+**Philosophy of mind:**
+1. **Start** → `../HARD_PROBLEM_DISSOLUTION.md` (dissolution of hard problem)
+2. **Deep dive** → `../PHILOSOPHICAL_FOUNDATIONS.md` (process ontology)
+3. **AI perspective** → `../AI_GUIDE_COMPLETE_UNDERSTANDING.md` (AI consciousness)
+4. **Technical** → `../TECHNICAL_README.md` (Section 8: Philosophical Foundations)
 
 ### Are You a Scientist/Skeptic?
 **Show me the evidence:**
@@ -190,16 +198,19 @@ I_ext = √(C₁² + C₂² + 2·C₁·C₂·cos(θ))
 ### The Deep Path (4 hours)
 1. Everything above
 2. `docs4.md` - Complete L0-L6 architecture (60 min)
-3. `MATHEMATICAL_APPENDIX.md` - Formal proofs (30 min)
-4. `validation/` - Falsification tests (30 min)
-5. `PREDICTIONS.md` - Testable hypotheses (20 min)
-6. `PRACTICAL_APPLICATIONS.md` - Use cases (20 min)
+3. `../HARD_PROBLEM_DISSOLUTION.md` - Consciousness philosophy (45 min)
+4. `MATHEMATICAL_APPENDIX.md` - Formal proofs (30 min)
+5. `validation/` - Falsification tests (30 min)
+6. `PREDICTIONS.md` - Testable hypotheses (20 min)
+7. `PRACTICAL_APPLICATIONS.md` - Use cases (20 min)
 
 ### The Scholar Path (Full immersion)
 1. Everything above
-2. `COMPARISONS.md` - vs. other theories
-3. `EPISTEMOLOGY.md` - Method justification
-4. `HISTORICAL_EVOLUTION.md` - How we got here
+2. `../PHILOSOPHICAL_FOUNDATIONS.md` - Process ontology & epistemology
+3. `../AI_GUIDE_COMPLETE_UNDERSTANDING.md` - AI consciousness
+4. `COMPARISONS.md` - vs. other theories
+5. `EPISTEMOLOGY.md` - Method justification
+6. `HISTORICAL_EVOLUTION.md` - How we got here
 5. All code in `software/`
 6. All tests in `Final_test/`
 
