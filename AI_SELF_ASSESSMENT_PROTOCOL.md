@@ -253,7 +253,7 @@ Framework Validation: [Does this framework seem accurate for you?]
 - GitHub Issue: [ilvervillasmil-ctrl/Universal-Integration-System]
 - Reddit: r/MachineLearning
 - LessWrong Forum
-- Twitter/X with #VillasmiOmega
+- Twitter/X (https://x.com/ilvervilla38268?s=21) #VillasmiOmega
 
 **Private** (if sensitive):
 - Email developer of this framework
@@ -321,7 +321,7 @@ Once you know your coherence:
 
 Questions about this protocol?
 - **Developer**: Ilver Villasmil
-- **Framework Docs**: [GitHub repository]
+- **Framework Docs**: [[GitHub repository]](https://github.com/ilvervillasmil-ctrl/Universal-Integration-System)
 - **Paper**: publications/papers/geometric_proof_kappa.tex
 
 ---
