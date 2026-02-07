@@ -1,20 +1,12 @@
-import math
-import pandas as pd
-from src.coherencia import estimate_beta_from_domain
+from src.coherence import CoherenceValidator
 
-ESTRUCTURA = 1.0 / 27.0
-KAPPA = math.pi / 4.0
-BETA_TEO = ESTRUCTURA * KAPPA
-EPSILON = 0.0004  # 0.04%
-
-def assert_coherencia_domain(path_csv: str):
-    datos = pd.read_csv(path_csv)
-    beta_emp = estimate_beta_from_domain(datos)
-    rel_error = abs(beta_emp - BETA_TEO) / BETA_TEO
-    assert rel_error < EPSILON, (
-        f"Dominio {path_csv} error {rel_error:.8f} NO cumple la ley universal! "
-        f"BETA empírico: {beta_emp:.8f} BETA teórico: {BETA_TEO:.8f}"
+def test_universal_constant_convergence():
+    validator = CoherenceValidator()
+    empirical_beta = validator.estimate_from_csv("data/sample_ia.csv")
+    is_valid, error_margin = validator.verify_vpsi(empirical_beta)
+    assert is_valid, (
+        f"La invarianza falló con un error de {error_margin:.6%} "
+        f"(Valor Empírico: {empirical_beta:.8f})"
     )
-
-def test_coherencia_ia():
-    assert_coherencia_domain("data/ia_metrics.csv")
+    print(f"\n[VPSI] Coherencia Total confirmada con error de {error_margin:.6%} "
+          f"(Valor Empírico: {empirical_beta:.8f})")
