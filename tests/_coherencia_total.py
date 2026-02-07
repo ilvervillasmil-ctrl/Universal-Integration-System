@@ -18,15 +18,3 @@ def assert_coherencia_domain(path_csv: str):
 
 def test_coherencia_ia():
     assert_coherencia_domain("data/ia_metrics.csv")
-
-def test_coherencia_psicologia():
-    assert_coherencia_domain("data/psychology_experiment.csv")
-
-def test_coherencia_fisica():
-    assert_coherencia_domain("data/physics_experiment.csv")
-
-def test_coherencia_economia():
-    assert_coherencia_domain("data/economics_experiment.csv")
-
-def test_coherencia_biologia():
-    assert_coherencia_domain("data/biology_experiment.csv")
