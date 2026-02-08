@@ -1,5 +1,5 @@
 import math
-from core.constants import ALPHA, BETA, PHI, S_REF
+from formulas.constants import ALPHA, BETA, PHI, S_REF
 
 
 class PurposeAlignmentError(Exception):
