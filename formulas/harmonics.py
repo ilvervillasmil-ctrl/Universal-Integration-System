@@ -1,5 +1,5 @@
 import math
-from core.constants import PHI
+from formulas.constants import PHI
 
 class Harmonics:
     @staticmethod
