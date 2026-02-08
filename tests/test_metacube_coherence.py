@@ -1,10 +1,10 @@
 import sys
 import os
 
-# Allow imports from the src/ directory
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
+# Add root directory to sys.path for package resolution
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from compute_coherence_metacube import cube_coherence, metacube_coherence
+from src.compute_coherence_metacube import cube_coherence, metacube_coherence
 
 def test_simple_vs_metacube():
     base_cube = [
