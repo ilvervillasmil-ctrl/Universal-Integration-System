@@ -1,8 +1,10 @@
-"""
-Minimal test for metacube coherence (UCF v3.0)
-"""
+import sys
+import os
 
-from src.compute_coherence_metacube import cube_coherence, metacube_coherence
+# Allow imports from the src/ directory
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
+
+from compute_coherence_metacube import cube_coherence, metacube_coherence
 
 def test_simple_vs_metacube():
     base_cube = [
