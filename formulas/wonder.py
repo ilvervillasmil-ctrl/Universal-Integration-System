@@ -17,6 +17,11 @@ class WonderLogic:
         return 1.0 - math.exp(-max(0, novelty) / max(0.001, sensitivity))
 
     @staticmethod
+    def compute_a(novelty, sensitivity=5.0):
+        """Alias: A = 1 - e^(-N/k)"""
+        return WonderLogic.compute(novelty, sensitivity)
+
+    @staticmethod
     def from_state(curiosity=5, openness=5, routine=5):
         """Compute from human-readable values (0-10 scales)."""
         novelty = (curiosity + openness) / 2
