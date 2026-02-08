@@ -1,4 +1,4 @@
-from formulas.constants import PHI
+from formulas.constants import ALPHA, BETA
 import math
 
 class NeuroscienceLogic:
