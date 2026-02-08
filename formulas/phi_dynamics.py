@@ -1,4 +1,4 @@
-from core.constants import PHI
+from formulas.constants import PHI
 import math
 
 class PhiDynamics:
