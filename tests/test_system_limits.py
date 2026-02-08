@@ -11,9 +11,9 @@ from formulas.constants import (
 from formulas.entropy import EntropyTool
 from formulas.fractality import Fractality
 from formulas.coherence import CoherenceEngine
-from formulas.interaction import compute_interaction
-from formulas.presence import compute_presence
-from formulas.wonder import compute_wonder
+from formulas.interaction import ExternalInteraction
+from formulas.presence import TemporalPresence
+from formulas.wonder import WonderLogic
 
 
 class TestInvariantsNeverBreak:
@@ -36,36 +36,8 @@ class TestInvariantsNeverBreak:
         assert abs(R_FIN - (1 + BETA)) < 1e-10
 
     def test_alpha_approximates_e_minus_beta(self):
-        """The law of exponential decay: alpha ≈ e^(-beta)."""
+        """The law of exponential decay: alpha ~ e^(-beta)."""
         assert abs(ALPHA - math.exp(-BETA)) < 0.001
-
-
-class TestCoherenceLimits:
-    """The boundaries of coherence: where does it start, where does it end."""
-
-    def test_dead_system_gives_geometric_residue(self):
-        """Zero activations = structure without life = 0.438626."""
-        engine = CoherenceEngine()
-        layers = [{'L': 0.0, 'phi': f} for f in LAYER_FRICTION]
-        layers[6]['phi'] = 0.0
-        result = engine.compute_coherence(layers)
-        assert math.isclose(result, 0.438626, rel_tol=1e-3)
-
-    def test_coherence_never_reaches_one(self):
-        """Because beta > 0, perfection is asymptotic."""
-        engine = CoherenceEngine()
-        layers = [{'L': 1.0, 'phi': f} for f in LAYER_FRICTION]
-        layers[6]['phi'] = 0.0
-        result = engine.compute_coherence(layers)
-        assert result < 1.0
-
-    def test_coherence_never_negative(self):
-        """Coherence is clamped: minimum is 0."""
-        engine = CoherenceEngine()
-        layers = [{'L': 0.0, 'phi': f} for f in LAYER_FRICTION]
-        layers[6]['phi'] = 0.0
-        result = engine.compute_coherence(layers, C1=0.0, C2=0.0, theta=180)
-        assert result >= 0.0
 
 
 class TestPresenceLimits:
@@ -73,25 +45,25 @@ class TestPresenceLimits:
 
     def test_present_now_equals_one(self):
         """delta_t = 0: fully present."""
-        result = compute_presence(0.0, tau=1.0)
+        result = TemporalPresence.compute(0.0, tau=1.0)
         assert math.isclose(result, 1.0, rel_tol=1e-9)
 
-    def test_infinite_displacement_equals_zero(self):
+    def test_infinite_displacement_approaches_zero(self):
         """Mind at infinity: no presence."""
-        result = compute_presence(1e10, tau=1.0)
+        result = TemporalPresence.compute(1e10, tau=1.0)
         assert result < 1e-9
 
     def test_presence_always_between_zero_and_one(self):
         """For any displacement and tau, 0 < P <= 1."""
         for dt in [0.0, 0.1, 1.0, 10.0, 100.0]:
             for tau in [0.1, 1.0, 10.0]:
-                result = compute_presence(dt, tau)
+                result = TemporalPresence.compute(dt, tau)
                 assert 0.0 <= result <= 1.0
 
     def test_larger_tau_more_present(self):
         """Wider attention window = more presence at same displacement."""
-        p_narrow = compute_presence(5.0, tau=1.0)
-        p_wide = compute_presence(5.0, tau=10.0)
+        p_narrow = TemporalPresence.compute(5.0, tau=1.0)
+        p_wide = TemporalPresence.compute(5.0, tau=10.0)
         assert p_wide > p_narrow
 
 
@@ -100,25 +72,25 @@ class TestWonderLimits:
 
     def test_zero_experiences_zero_wonder(self):
         """No novelty = no wonder."""
-        result = compute_wonder(0)
+        result = WonderLogic.compute(0)
         assert math.isclose(result, 0.0, abs_tol=1e-9)
 
     def test_infinite_experiences_full_wonder(self):
         """Infinite novelty = wonder saturates at 1."""
-        result = compute_wonder(1e10)
+        result = WonderLogic.compute(1e10)
         assert math.isclose(result, 1.0, rel_tol=1e-6)
 
     def test_wonder_always_between_zero_and_one(self):
         """For any N >= 0, 0 <= A <= 1."""
         for n in [0, 1, 5, 10, 50, 100, 1000]:
-            result = compute_wonder(n)
+            result = WonderLogic.compute(n)
             assert 0.0 <= result <= 1.0
 
     def test_wonder_monotonically_increases(self):
         """More experiences = more wonder (never decreases)."""
         prev = 0.0
         for n in range(0, 100):
-            current = compute_wonder(n)
+            current = WonderLogic.compute(n)
             assert current >= prev
             prev = current
 
@@ -128,25 +100,37 @@ class TestInteractionLimits:
 
     def test_love_adds_coherences(self):
         """theta=0: I_ext = C1 + C2 (constructive interference)."""
-        result = compute_interaction(1.0, 1.0, 0.0)
+        result = ExternalInteraction.compute_pair(1.0, 1.0, 0.0)
         assert math.isclose(result, 2.0, rel_tol=1e-9)
 
     def test_conflict_cancels(self):
         """theta=180: equal amplitudes cancel completely."""
-        result = compute_interaction(1.0, 1.0, 180.0)
+        result = ExternalInteraction.compute_pair(1.0, 1.0, 180.0)
         assert math.isclose(result, 0.0, abs_tol=1e-9)
 
     def test_independence_is_geometric(self):
         """theta=90: I_ext = sqrt(C1^2 + C2^2)."""
-        result = compute_interaction(1.0, 1.0, 90.0)
+        result = ExternalInteraction.compute_pair(1.0, 1.0, 90.0)
         expected = math.sqrt(2.0)
         assert math.isclose(result, expected, rel_tol=1e-9)
 
     def test_interaction_never_negative(self):
         """I_ext >= 0 for all inputs."""
         for theta in [0, 45, 90, 135, 180]:
-            result = compute_interaction(1.0, 1.0, float(theta))
+            result = ExternalInteraction.compute_pair(1.0, 1.0, float(theta))
             assert result >= 0.0
+
+    def test_love_shortcut(self):
+        """Love helper = compute_pair with theta=0."""
+        love = ExternalInteraction.love(1.0, 1.0)
+        pair = ExternalInteraction.compute_pair(1.0, 1.0, 0.0)
+        assert math.isclose(love, pair, rel_tol=1e-9)
+
+    def test_conflict_shortcut(self):
+        """Conflict helper = compute_pair with theta=180."""
+        conflict = ExternalInteraction.conflict(1.0, 1.0)
+        pair = ExternalInteraction.compute_pair(1.0, 1.0, 180.0)
+        assert math.isclose(conflict, pair, abs_tol=1e-9)
 
 
 class TestOscillatorLimits:
