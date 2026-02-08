@@ -11,3 +11,6 @@ from formulas.constants import (
     CUBE_TOTAL, CUBE_EXTERIOR, CUBE_CENTER,
     BETA_EMPIRICAL, get_layer_frequency,
 )
+
+CODE_ARCHITECT = CODE_INTEGRATED
+CODE_SYNCHRONY = CODE_SATURATION
