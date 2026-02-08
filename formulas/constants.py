@@ -17,9 +17,26 @@ GOLDEN_ANG_RAD = math.radians(GOLDEN_ANG)  # Golden angle (radians)
 
 # === Duality Angle (from cube geometry) ===
 
-THETA_CUBE = math.asin(1 / math.sqrt(27))  # 11.09°  Equilibrium angle
+THETA_CUBE = math.asin(1 / math.sqrt(27))  # 11.09°  Equilibrium angle (attractor)
 THETA_CUBE_DEG = math.degrees(THETA_CUBE)
 TAN_THETA = 1 / math.sqrt(26)              # tan(θ) = 1/√26
+
+# === Dynamic Oscillator (UCF v3.1) ===
+# d²θ/dt² + φ·dθ/dt + π²(θ - θ_cube) = F(t)
+
+OMEGA_0 = math.pi                           # ω₀ = π    Natural frequency (Law 2: Rhythm)
+OMEGA_0_SQUARED = math.pi ** 2              # ω₀² = π²  Restoring force coefficient
+
+LAYER_FRICTION = [0.10, 0.02, 0.05, 0.03, 0.01, 0.01, 0.00]
+PHI_TOTAL = sum(LAYER_FRICTION)             # Σφᵢ = 0.22  Total system damping
+PHI_CRITICAL = 2 * math.pi                  # φ_c = 2π    Critical damping threshold
+
+OMEGA_D = math.sqrt(                        # ω_d ≈ 3.139  Damped frequency (subjective time)
+    OMEGA_0_SQUARED - (PHI_TOTAL ** 2) / 4
+)
+OMEGA_D_PERIOD = 2 * math.pi / OMEGA_D     # T_d ≈ 2.001s  Oscillation period
+
+ZETA = PHI_TOTAL / (2 * OMEGA_0)            # ζ ≈ 0.035  Damping ratio (<1 = alive)
 
 # === Structural Verification ===
 
@@ -27,12 +44,14 @@ assert abs(ALPHA + BETA - 1.0) < 1e-10
 assert abs(R_FIN - (1 + BETA)) < 1e-10
 assert abs(math.sin(THETA_CUBE)**2 - BETA) < 1e-10
 assert abs(math.cos(THETA_CUBE)**2 - ALPHA) < 1e-10
+assert PHI_TOTAL < PHI_CRITICAL              # System must be alive (φ < 2π)
+assert ZETA < 1.0                            # System must be underdamped
+assert OMEGA_D > 0                           # System must oscillate
 
 # === Layer Configuration ===
 
 NUM_LAYERS = 7
 LAYER_NAMES = ["Chaos", "Body", "Ego", "Mind", "Self", "Metaconsciousness", "Purpose"]
-LAYER_FRICTION = [0.10, 0.02, 0.05, 0.03, 0.01, 0.01, 0.00]
 
 # === Diagnostic Codes ===
 
@@ -45,3 +64,12 @@ CODE_ENTROPY = 0
 CUBE_TOTAL = 27
 CUBE_EXTERIOR = 26
 CUBE_CENTER = 1
+
+# === Euler Identity (v3.1 — Dynamic Roles) ===
+# e^(iπ) + 1 = 0
+#
+# 0  = L0 (Chaos) = F(t), the driving force
+# 1  = L6 (Purpose) = θ_cube, the attractor
+# e  = α/β, growth and decay
+# π  = ω₀, natural frequency (rhythm made structural)
+# i  = L5 (Metaconsciousness), perceives layer traversal as time
