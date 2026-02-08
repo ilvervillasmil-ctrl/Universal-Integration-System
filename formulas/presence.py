@@ -6,7 +6,6 @@ class PresenceLogic:
     Temporal Presence: P_t = e^(-|delta_t|/tau)
 
     delta_t = mental displacement from now
-              positive = anxiety (future), negative = depression (past)
     tau = attention window width (meditation expands this)
 
     P = 1: total presence (here and now)
@@ -17,6 +16,11 @@ class PresenceLogic:
     def compute(delta_t, tau=1.0):
         """P_t = e^(-|delta_t|/tau)"""
         return math.exp(-abs(delta_t) / max(tau, 0.001))
+
+    @staticmethod
+    def compute_pt(delta_t, tau=1.0):
+        """Alias: P_t = e^(-|delta_t|/tau)"""
+        return PresenceLogic.compute(delta_t, tau)
 
     @staticmethod
     def from_state(anxiety=0, depression=0, mindfulness=1.0):
@@ -32,5 +36,4 @@ class PresenceLogic:
         return PresenceLogic.compute(delta_t, tau)
 
 
-# Alias for compatibility
 TemporalPresence = PresenceLogic
