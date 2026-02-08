@@ -10,6 +10,18 @@ class ResonanceLogic:
     """
 
     @staticmethod
+    def calculate_layer_frequency(layer_index):
+        """nu_i = PHI^(i/2). Higher layers vibrate faster."""
+        return PHI ** (layer_index / 2)
+
+    @staticmethod
+    def calculate_phase_alignment(e_i, e_j):
+        """Phase alignment between two layers: min/max ratio."""
+        if e_i == 0 or e_j == 0:
+            return 0.0
+        return min(e_i, e_j) / max(e_i, e_j)
+
+    @staticmethod
     def pair_resonance(e_i, e_j, phase_diff=0.0):
         """Resonance between two adjacent layers."""
         if e_i == 0 or e_j == 0:
