@@ -1,7 +1,7 @@
 import math
 
 
-class TemporalPresence:
+class PresenceLogic:
     """
     Temporal Presence: P_t = e^(-|delta_t|/tau)
 
@@ -29,4 +29,8 @@ class TemporalPresence:
         """
         delta_t = max(anxiety, depression)
         tau = max(0.1, mindfulness)
-        return TemporalPresence.compute(delta_t, tau)
+        return PresenceLogic.compute(delta_t, tau)
+
+
+# Alias for compatibility
+TemporalPresence = PresenceLogic
