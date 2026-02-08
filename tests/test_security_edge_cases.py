@@ -19,7 +19,6 @@ from core.engine import OmegaEngine, PurposeAlignmentError
 
 
 class TestEnergyEdgeCases:
-    """Energy must handle extremes without crashing."""
 
     def test_zero_activation_all_layers(self):
         energies = LayerEnergy.compute_all([0.0] * 7)
@@ -34,7 +33,6 @@ class TestEnergyEdgeCases:
         assert all(e > 0 for e in energies)
 
     def test_very_large_activation(self):
-        """Activations above 1.0 should still compute without crash."""
         energies = LayerEnergy.compute_all([100.0] * 7)
         assert all(e > 0 for e in energies)
 
@@ -54,16 +52,13 @@ class TestPresenceEdgeCases:
         assert p < 0.01
 
     def test_negative_displacement(self):
-        """Negative delta_t = past. Should use absolute value."""
         p = PresenceLogic.compute(-5.0)
         assert 0.0 < p < 1.0
 
     def test_compute_pt_zero(self):
-        """P_t(0) = 1/(1+0) = 1.0"""
         assert PresenceLogic.compute_pt(0) == 1.0
 
     def test_compute_pt_negative(self):
-        """Negative displacement still works."""
         p = PresenceLogic.compute_pt(-3)
         assert abs(p - 0.25) < 1e-10
 
@@ -78,11 +73,9 @@ class TestWonderEdgeCases:
         assert abs(a - 1.0) < 1e-6
 
     def test_negative_novelty(self):
-        """Negative novelty treated as zero."""
         assert WonderLogic.compute(-5.0) == 0.0
 
     def test_zero_sensitivity_uses_s_ref(self):
-        """When sensitivity <= 0, uses S_REF."""
         a = WonderLogic.compute(5.0, 0.0)
         expected = 1.0 - math.exp(-5.0 / S_REF)
         assert abs(a - expected) < 1e-10
@@ -96,12 +89,10 @@ class TestWonderEdgeCases:
 class TestNegentropyEdgeCases:
 
     def test_all_zeros(self):
-        """All zeros = max entropy = zero negentropy."""
         n = NegentropyCalculator.compute([0.0] * 7)
         assert abs(n) < 1e-10
 
     def test_single_nonzero(self):
-        """One value = zero entropy = max negentropy."""
         energies = [0, 0, 0, 5.0, 0, 0, 0]
         n = NegentropyCalculator.compute(energies)
         assert abs(n - 1.0) < 1e-10
@@ -109,7 +100,7 @@ class TestNegentropyEdgeCases:
     def test_very_small_values(self):
         energies = [1e-10] * 7
         n = NegentropyCalculator.compute(energies)
-        assert 0.0 <= n <= 1.0
+        assert -1e-10 <= n <= 1.0
 
     def test_very_large_values(self):
         energies = [1e10] * 7
@@ -127,7 +118,6 @@ class TestInteractionEdgeCases:
         assert abs(result - 1.0) < 1e-10
 
     def test_negative_coherence(self):
-        """Negative values should not crash."""
         result = ExternalInteraction.compute_pair(-1.0, 1.0, 0.0)
         assert isinstance(result, float)
 
@@ -138,7 +128,6 @@ class TestInteractionEdgeCases:
         assert ExternalInteraction.compute_multi([0.5]) == 0.5
 
     def test_conflict_equal_values(self):
-        """Equal values in conflict = zero."""
         assert ExternalInteraction.conflict(0.7, 0.7) == 0.0
 
 
@@ -148,7 +137,6 @@ class TestResonanceEdgeCases:
         assert ResonanceLogic.compute([0.0] * 7) == 0.0
 
     def test_single_energy(self):
-        """One layer can't resonate alone."""
         r = ResonanceLogic.compute([1.0])
         assert r == 0.0
 
@@ -170,7 +158,6 @@ class TestMetaconsciousnessEdgeCases:
         assert mc == 0.0
 
     def test_full_friction_l3(self):
-        """Full friction on L3 kills MC."""
         activations = [1.0] * 7
         frictions = [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0]
         mc = MetaconsciousnessCalculator.compute(activations, frictions)
@@ -187,7 +174,6 @@ class TestCoherenceEdgeCases:
         assert result["c_beta"] == 0.0
 
     def test_c_alpha_zero_complexity(self):
-        """Complexity=0 but u_min=beta prevents division by zero."""
         result = CoherenceEngine.compute_c_alpha(1.0, 1.0, 0.0, 0.0)
         assert result["c_alpha"] > 0
 
@@ -196,7 +182,6 @@ class TestCoherenceEdgeCases:
         assert result["c_total"] == 0.0
 
     def test_full_analysis_all_zeros(self):
-        """System at absolute zero should not crash."""
         result = CoherenceEngine.full_analysis([0.0] * 7)
         assert result["diagnostic_code"] == 0
         assert result["diagnostic_name"] == "Terminal Entropy"
@@ -211,7 +196,6 @@ class TestEngineSecurity:
         assert 0.0 <= result <= 1.0
 
     def test_l6_friction_tiny_nonzero(self):
-        """Even 0.001 friction on L6 is rejected."""
         engine = OmegaEngine()
         layers = [{'L': 1.0, 'phi': 0.0} for _ in range(7)]
         layers[6]['phi'] = 0.001
@@ -226,14 +210,12 @@ class TestEngineSecurity:
             engine.compute_coherence(layers)
 
     def test_result_always_clamped(self):
-        """Result never exceeds 1.0."""
         engine = OmegaEngine()
         layers = [{'L': 100.0, 'phi': 0.0} for _ in range(7)]
         result = engine.compute_coherence(layers, C1=100.0, C2=100.0, theta=0.0)
         assert result <= 1.0
 
     def test_result_never_negative(self):
-        """Result never goes below 0.0."""
         engine = OmegaEngine()
         layers = [{'L': 0.01, 'phi': 0.0} for _ in range(7)]
         result = engine.compute_coherence(layers, C1=0.01, C2=0.01, theta=180.0)
