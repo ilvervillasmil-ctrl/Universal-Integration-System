@@ -1,7 +1,7 @@
 import sys
 import os
 
-# Add root directory to sys.path for package resolution
+# Asegura que Python pueda encontrar el paquete src/
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from src.compute_coherence_metacube import cube_coherence, metacube_coherence
