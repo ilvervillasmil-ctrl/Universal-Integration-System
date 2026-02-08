@@ -124,14 +124,22 @@ class CoherenceEngine:
         else:
             balance = "EXCESS_MEASUREMENT"
 
+        c_beta_ideal = c_total * math.sin(THETA_CUBE)
+        c_alpha_ideal = c_total * math.cos(THETA_CUBE)
+
         return {
             "c_total": c_total,
             "c_beta": c_beta,
             "c_alpha": c_alpha,
+            "theta_actual": theta_actual,
             "theta_actual_deg": math.degrees(theta_actual),
+            "theta_cube": THETA_CUBE,
             "theta_cube_deg": math.degrees(THETA_CUBE),
+            "theta_deviation": theta_deviation,
             "theta_deviation_deg": math.degrees(theta_deviation),
             "balance": balance,
+            "c_beta_ideal": c_beta_ideal,
+            "c_alpha_ideal": c_alpha_ideal,
         }
 
     @staticmethod
