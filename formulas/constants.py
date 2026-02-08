@@ -1,13 +1,10 @@
-# Core constants specific to the Villasmil-Ω Framework
-PHI = 1.6180339887  # The golden ratio
-ALPHA = 26 / 27     # Manifested structure (0.96296...)
-BETA = 1 / 27       # Unmanifested potential (0.03703...)
-S_REF = 2.718281828 / 3.1415926535  # S_REF = e / π (≈ 0.8652)
+import math
 
-# Descriptions (metadata)
-CONSTANTS_DESCRIPTION = {
-    "PHI": "Golden ratio, used as the base for resonance frequencies.",
-    "ALPHA": "Represents the visible, manifested structure of reality.",
-    "BETA": "Represents the hidden, unmanifested potential.",
-    "S_REF": "Bridge between exponential growth (e) and cyclical rhythm (π)."
-}
+KAPPA = math.pi / 4            # Universal integration constant (π/4)
+R_FIN = 1.0                    # Final radius reference (change as required)
+THETA_CUBE = math.asin(1 / math.sqrt(27))  # Cube equilibrium angle (≈11.09°)
+GOLDEN_ANG = (math.pi * (math.sqrt(5) - 1)) / 2   # Golden angle for fractal systems
+TAN_THETA = math.tan(THETA_CUBE)             # Tangent of equilibrium angle
+
+ALPHA = 26/27                  # Observable ratio
+BETA = 1/27                    # Observer ratio
