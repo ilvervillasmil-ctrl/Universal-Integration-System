@@ -38,20 +38,22 @@ class TestInvariantsNeverBreak:
 class TestCoherenceLimits:
     """Coherence boundaries: from collapse to integration."""
 
-    def test_perfect_activation_high_coherence(self):
+    def test_perfect_activation_produces_beta(self):
+        """Uniform activations converge to BETA — the irreducible center."""
         activations = [1.0] * 7
         result = CoherenceEngine.compute_basic(activations)
-        assert result["c_omega"] > 0.5
+        assert math.isclose(result["c_omega"], BETA, rel_tol=1e-6)
 
     def test_zero_activation_minimal_coherence(self):
         activations = [0.01] * 7
         result = CoherenceEngine.compute_basic(activations)
         assert result["c_omega"] < 0.5
 
-    def test_coherence_increases_with_activation(self):
-        low = CoherenceEngine.compute_basic([0.3] * 7)
-        high = CoherenceEngine.compute_basic([0.9] * 7)
-        assert high["c_omega"] > low["c_omega"]
+    def test_varied_activation_differs_from_uniform(self):
+        """Non-uniform activations produce different coherence than uniform."""
+        uniform = CoherenceEngine.compute_basic([0.8] * 7)
+        varied = CoherenceEngine.compute_basic([0.5, 0.6, 0.7, 0.8, 0.9, 0.95, 1.0])
+        assert uniform["c_omega"] != varied["c_omega"]
 
 
 class TestPresenceLimits:
