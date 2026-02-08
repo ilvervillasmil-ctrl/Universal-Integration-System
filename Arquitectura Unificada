@@ -1,0 +1,11 @@
+## Arquitectura Unificada (post-consolidación)
+
+### Fuente Única de Verdad
+- `formulas/constants.py` → TODAS las constantes del framework
+- `formulas/coherence.py` → TODA la lógica de coherencia
+- `core/constants.py` → Re-exporta desde formulas (compatibilidad)
+- `core/engine.py` → OmegaEngine (usa formulas.constants)
+
+### Regla de Oro
+Nunca definir un valor numérico en más de un archivo.
+Si necesitas una constante, impórtala de `formulas/constants.py`.
